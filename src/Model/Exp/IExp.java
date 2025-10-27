@@ -4,5 +4,5 @@ import Model.Value.IValue;
 
 
 public interface IExp {
-    IValue eval(MyIDictionary<String, IValue> tbl );
+    IValue eval(MyIDictionary<String, IValue> tbl ) throws Exception;
 }

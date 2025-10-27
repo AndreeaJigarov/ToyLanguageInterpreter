@@ -28,7 +28,7 @@ public class ArithExp implements IExp{
     }
 
     @Override
-    public IValue eval(MyIDictionary<String, IValue> tbl) {
+    public IValue eval(MyIDictionary<String, IValue> tbl) throws Exception {
         IValue v1,v2;
         v1 =e1.eval(tbl);
         if(v1.getType().equals(new IntType())){

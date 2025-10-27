@@ -22,6 +22,9 @@ public class MyDictionary<T,E> implements MyIDictionary<T,E>
     public E get(T key){
         return  dictionary.get(key);
     }
+    public E lookup(T key){
+        return  dictionary.get(key);
+    }
     public void remove(T key){
         dictionary.remove(key);
     }
