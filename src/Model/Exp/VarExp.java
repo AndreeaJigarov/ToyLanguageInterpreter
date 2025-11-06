@@ -1,22 +1,28 @@
 package Model.Exp;
 
+import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.Value.IValue;
 
 public class VarExp implements IExp{
     String id;
 
-    VarExp(String id){
+    public VarExp(String id){
         this.id = id;
     }
 
 
     @Override
-    public IValue eval(MyIDictionary<String, IValue> tbl) throws Exception {
+    public IValue eval(MyIDictionary<String, IValue> tbl) throws MyException {
         if(tbl.containsKey(id)){
             return tbl.get(id);
         }
-        else throw new Exception("Variable "+id+" not found");
+        else throw new MyException("Variable "+id+" not found");
+    }
+
+    @Override
+    public String toString(){
+        return id;
     }
 
 }

@@ -5,4 +5,6 @@ public interface MyIStack<T> {
     public boolean isEmpty();
     public void push(T item);
     public T pop();
+    public String toString();
+
 }

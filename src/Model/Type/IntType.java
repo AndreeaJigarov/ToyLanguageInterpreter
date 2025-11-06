@@ -1,5 +1,8 @@
 package Model.Type;
 
+import Model.Value.IValue;
+import Model.Value.IntValue;
+
 public class IntType implements IType {
     @Override
     public String toString() {return "int";}
@@ -10,5 +13,10 @@ public class IntType implements IType {
             return true;
         }
         else return false;
+    }
+
+    @Override
+    public IValue defaultValue() {
+        return new IntValue(0);
     }
 }

@@ -15,4 +15,5 @@ public interface MyIDictionary<T,E>{
     getKeys();
     List<E> getValues();
     public MyIDictionary<T,E> deepCopy();
+    public String toString();
 }

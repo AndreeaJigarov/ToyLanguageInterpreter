@@ -1,5 +1,6 @@
 package Model.Exp;
 
+import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.Type.IntType;
 import Model.Value.IValue;
@@ -10,7 +11,7 @@ public class ArithExp implements IExp{
     IExp e2;
     int op; ///1-plus, 2-minus, 3-star, 4-divide
 
-    public ArithExp(IExp e1, IExp e2, char opString) {
+    public ArithExp(char opString,IExp e1, IExp e2 ) {
         this.e1 = e1;
         this.e2 = e2;
         if(opString=='+'){
@@ -28,7 +29,7 @@ public class ArithExp implements IExp{
     }
 
     @Override
-    public IValue eval(MyIDictionary<String, IValue> tbl) throws Exception {
+    public IValue eval(MyIDictionary<String, IValue> tbl) throws MyException {
         IValue v1,v2;
         v1 =e1.eval(tbl);
         if(v1.getType().equals(new IntType())){
@@ -50,7 +51,7 @@ public class ArithExp implements IExp{
                     return new IntValue(n1*n2);
                 }
                 else if(op==4){
-                    if(n2==0)throw new RuntimeException("division by zero");
+                    if(n2==0)throw new MyException("division by zero");
                     else return new IntValue(n1/n2);
                 }
 
@@ -80,6 +81,7 @@ public class ArithExp implements IExp{
         return op;
     }
 
+    @Override
     public String toString(){
         return e1.toString()+" "+getOpString()+" "+e2.toString();
     }

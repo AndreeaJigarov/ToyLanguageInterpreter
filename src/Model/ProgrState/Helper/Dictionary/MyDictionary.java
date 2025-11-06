@@ -52,4 +52,10 @@ public class MyDictionary<T,E> implements MyIDictionary<T,E>
         }
         return newDictionary;
     }
+
+    @Override
+    public String toString(){
+        return dictionary.toString();
+    }
+
 }

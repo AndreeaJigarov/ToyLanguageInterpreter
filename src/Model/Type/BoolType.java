@@ -1,5 +1,8 @@
 package Model.Type;
 
+import Model.Value.BoolValue;
+import Model.Value.IValue;
+
 public class BoolType implements IType {
     @Override
     public String toString() {
@@ -11,4 +14,8 @@ public class BoolType implements IType {
         return obj instanceof BoolType;
     }
 
+    @Override
+    public IValue defaultValue() {
+        return new BoolValue(false);
+    }
 }

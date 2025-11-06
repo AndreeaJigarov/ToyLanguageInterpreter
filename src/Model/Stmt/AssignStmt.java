@@ -1,5 +1,6 @@
 package Model.Stmt;
 
+import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.PrgState;
@@ -18,14 +19,11 @@ public class AssignStmt implements IStmt {
     } // maybe not?
 
 
-    @Override
-    public String toString() {
-        return id+"="+exp.toString();
-    }
+
 
     @Override
-    public PrgState execute(PrgState state) throws Exception {
-        MyIStack<IStmt> stk = state.getStk();
+    public PrgState execute(PrgState state) throws MyException {
+        MyIStack<IStmt> stk = state.getExeStack();
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
 
         if (symTbl.containsKey(id)){
@@ -35,15 +33,19 @@ public class AssignStmt implements IStmt {
                 symTbl.update(id,value);
             }
             else{
-                throw new Exception("declared type of variable" +id+" and type of assigned expression do not match");
+                throw new MyException("declared type of variable" +id+" and type of assigned expression do not match");
 
             }
         }else{
-            throw new Exception("the used variable "+id+" nwas not declared before");
+            throw new MyException("the used variable "+id+" nwas not declared before");
 
         }
         return state;
     }
 
+    @Override
+    public String toString() {
+        return id+"="+exp.toString();
+    }
 
 }

@@ -5,6 +5,9 @@ import java.util.*;
 
 public class MyStack <T> implements MyIStack<T> {
     private Stack<T> stack;
+    public MyStack() {
+        stack = new Stack<T>();
+    }
     public T peek(){
         return stack.peek();
     }
@@ -16,6 +19,9 @@ public class MyStack <T> implements MyIStack<T> {
     }
     public T pop(){
         return stack.pop();
+    }
+    public String toString(){
+        return (stack.stream().toList().reversed().toString());
     }
 
 }

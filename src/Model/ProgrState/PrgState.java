@@ -1,8 +1,12 @@
 package Model.ProgrState;
 
+import Exceptions.MyException;
+import Model.ProgrState.Helper.Dictionary.MyDictionary;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.Helper.List.MyIList;
+import Model.ProgrState.Helper.List.MyList;
 import Model.ProgrState.Helper.Stack.MyIStack;
+import Model.ProgrState.Helper.Stack.MyStack;
 import Model.Stmt.IStmt;
 import Model.Stmt.NopStmt;
 import Model.Value.IValue;
@@ -18,12 +22,21 @@ public class PrgState {
     private MyIList<IValue> out;
     private IStmt originalProgram; //good to have cica
 
-    PrgState(MyIStack<IStmt> stk, MyIDictionary<String,IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
+    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
         originalProgram = orPrg;// DEEPCOPY recreate entire original program
-        stk.push(orPrg);
+        exeStack.push(orPrg);
+        id=ID++;
+    }
+
+    public PrgState(IStmt ex) {
+        originalProgram=ex;
+        exeStack = new MyStack<IStmt>();
+        symTable = new MyDictionary<String, IValue>();
+        out= new MyList<IValue>();
+        exeStack.push(ex);
         id=ID++;
     }
 
@@ -64,9 +77,9 @@ public class PrgState {
         return !exeStack.isEmpty();
     }
 
-    public PrgState oneStep() throws Exception {
+    public PrgState oneStep() throws MyException {
         if(exeStack.isEmpty())
-            throw new Exception("PrgState stack is empty!!!");
+            throw new MyException("PrgState stack is empty!!!");
         IStmt curr = (IStmt) exeStack.pop();
         if (curr instanceof NopStmt)
             return this;

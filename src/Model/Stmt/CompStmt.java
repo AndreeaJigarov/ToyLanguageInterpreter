@@ -15,14 +15,14 @@ public class CompStmt implements IStmt {
     }
     @Override
     public PrgState execute(PrgState state){
-        MyIStack<IStmt> stack = state.getStk();
+        MyIStack<IStmt> stack = state.getExeStack();
         stack.push(second);
         stack.push(first);
         return state;
     }
 
     public String toString(){
-        return "("+first.toString() + ";" + second.toString()+")";
+        return "("+first + ";" + second +")";
     }
 
 

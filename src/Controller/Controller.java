@@ -1,5 +1,6 @@
 package Controller;
 
+import Exceptions.MyException;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.PrgState;
 import Model.Stmt.IStmt;
@@ -7,9 +8,9 @@ import Repository.IRepository;
 
 public class Controller  implements IController {
     @Override
-    public PrgState oneStep(PrgState prgState) throws Exception {
+    public PrgState oneStep(PrgState prgState) throws MyException {
         MyIStack<IStmt> stk = prgState.getExeStack();
-        if(stk.isEmpty())throw new Exception("prgstate stack is empty");
+        if(stk.isEmpty())throw new MyException("prgstate stack is empty");
         IStmt crtStmt = stk.pop();
         return crtStmt.execute(prgState);
     }
@@ -20,12 +21,14 @@ public class Controller  implements IController {
         this.repository = repository;
     }
 
-    public void allStep() throws Exception {
+    public void allStep() throws MyException {
         PrgState prg = repository.getCrtPrg();
-        //here you can display the prg state
+        System.out.println("Initial state:");
+        System.out.println(prg);
         while(!prg.getExeStack().isEmpty()){
-            oneStep(prg);
-            //here u can display the prg state
+            prg = oneStep(prg);
+            System.out.println("After one step:");
+            System.out.println(prg);
         }
     }
 

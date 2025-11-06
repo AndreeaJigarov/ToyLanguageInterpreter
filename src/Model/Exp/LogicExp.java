@@ -1,5 +1,6 @@
 package Model.Exp;
 
+import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.Type.BoolType;
 import Model.Value.BoolValue;
@@ -37,7 +38,7 @@ public class LogicExp implements IExp{
     }
 
     @Override
-    public IValue eval(MyIDictionary<String, IValue> tbl) throws Exception {
+    public IValue eval(MyIDictionary<String, IValue> tbl) throws MyException {
         IValue v1 = e1.eval(tbl);
         IValue v2 = e2.eval(tbl);
 
@@ -45,6 +46,9 @@ public class LogicExp implements IExp{
             if (v1.getType().equals(new BoolType())) {
                 BoolValue boolval = (BoolValue) v1;
                 return new BoolValue(!boolval.getValue());
+            } else
+            {
+                throw new MyException("Operand of 'not' must be boolean");
             }
         } else {
             if (v2.getType().equals(new BoolType()) && v1.getType().equals(new BoolType())) {
@@ -56,9 +60,15 @@ public class LogicExp implements IExp{
                     return new BoolValue(boolval2.getValue() || boolval1.getValue());
                 }
             }
-            throw new Exception("Operands must be bool");
+            throw new MyException("Operands must be bool");
         }
-        return null;  // WHY DOES IT REQUIRE ME TO RETURN STH :(
+          // WHY DOES IT REQUIRE ME TO RETURN STH :(
+        //cause you forgot a logical case you dumbass, solved
+    }
+
+    @Override
+    public String toString(){
+        return e1.toString()+" "+getStringOperator()+" "+e2.toString();
     }
 
 
