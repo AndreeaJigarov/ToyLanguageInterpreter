@@ -91,7 +91,7 @@ public class PrgState {
 
     ) {
         return "----------------------------------------------- \n " +
-                "ID: " + ID +
+                ">>> ProgramState:" + "ID: " + ID +
                 "\n ExeStack: " + exeStack.toString() +
                 "\n SymTable: " + symTable.toString() +
                 "\n Out: " + out.toString() +

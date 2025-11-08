@@ -41,4 +41,9 @@ public class MyList<T> implements MyIList<T> {
         return list.toString();
     }
 
+    @Override
+    public Iterator<T> iterator(){
+        return list.iterator();
+    }
+
 }

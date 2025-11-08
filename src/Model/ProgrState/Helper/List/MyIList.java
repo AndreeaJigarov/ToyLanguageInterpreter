@@ -1,6 +1,6 @@
 package Model.ProgrState.Helper.List;
 
-public interface MyIList<T>{
+public interface MyIList<T> extends Iterable<T>{
 
     public void add(T element);
     public void remove(T element);

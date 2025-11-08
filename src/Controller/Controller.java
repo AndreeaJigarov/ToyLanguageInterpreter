@@ -25,10 +25,12 @@ public class Controller  implements IController {
         PrgState prg = repository.getCrtPrg();
         System.out.println("Initial state:");
         System.out.println(prg);
+        repository.logPrgStateExec(prg); //added
         while(!prg.getExeStack().isEmpty()){
             prg = oneStep(prg);
             System.out.println("After one step:");
             System.out.println(prg);
+            repository.logPrgStateExec(prg); //added
         }
     }
 

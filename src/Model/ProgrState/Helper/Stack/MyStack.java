@@ -23,5 +23,14 @@ public class MyStack <T> implements MyIStack<T> {
     public String toString(){
         return (stack.stream().toList().reversed().toString());
     }
+    public List<T> toList(){
+        return stack.stream().toList();
+    }
+    @Override
+    public Iterator<T> iterator() {
+        List<T> list = new ArrayList<>(stack);
+        Collections.reverse(list); // top of stack first
+        return list.iterator();
+    }
 
 }

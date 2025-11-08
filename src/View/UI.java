@@ -25,14 +25,14 @@ public class UI {
         System.out.println("4. Exit");
     }
 
-    public void executeOption( int option) throws MyException {
+    public void executeOption( int option, String path) throws MyException {
         switch(option){
             case 1:
                 IStmt ex1= new CompStmt
                         (new VarDeclStmt("v",new IntType()), new CompStmt
                                 (new AssignStmt("v",new ValueExp(new IntValue(2))), new PrintStmt(new VarExp("v"))));
                 PrgState prg1 = new PrgState(ex1);
-                Repository repository = new Repository(prg1);
+                Repository repository = new Repository(prg1, path);
                 Controller controller = new Controller(repository);
                 controller.allStep();
                 break;
@@ -47,7 +47,7 @@ public class UI {
                                                                 new ArithExp('+',new VarExp("a"), new ValueExp(new IntValue(1)))),
                                                 new PrintStmt(new VarExp("b"))))));
                 PrgState prg2 = new PrgState(ex2);
-                Repository repository2 = new Repository(prg2);
+                Repository repository2 = new Repository(prg2, path);
                 Controller controller2 = new Controller(repository2);
                 controller2.allStep();
                 break;
@@ -59,7 +59,7 @@ public class UI {
                                                 IntValue(2))), new AssignStmt("v", new ValueExp(new IntValue(3)))), new PrintStmt(new
                                                 VarExp("v"))))));
                 PrgState prg3 = new PrgState(ex3);
-                Repository repository3 = new Repository(prg3);
+                Repository repository3 = new Repository(prg3, path);
                 Controller controller3 = new Controller(repository3);
                 controller3.allStep();
                 break;
@@ -72,12 +72,16 @@ public class UI {
 
     public void run(){
         int option = 0;
+        System.out.println("Please enter file path to save to > ");
+        Scanner sc1 = new Scanner(System.in);
+        String path = sc1.nextLine();
+
         while(option != 4){
             printMenu();
             try{
                 Scanner sc = new Scanner(System.in);
                 option=Integer.parseInt(sc.nextLine());
-                executeOption(option);
+                executeOption(option, path);
 
             }catch (Exception ex){
                 System.err.println(ex.getMessage());
