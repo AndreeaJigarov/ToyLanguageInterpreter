@@ -2,6 +2,7 @@ package Model.Exp;
 
 import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
+import Model.ProgrState.Helper.Heap.IHeap;
 import Model.Type.BoolType;
 import Model.Value.BoolValue;
 import Model.Value.IValue;
@@ -38,9 +39,9 @@ public class LogicExp implements IExp{
     }
 
     @Override
-    public IValue eval(MyIDictionary<String, IValue> tbl) throws MyException {
-        IValue v1 = e1.eval(tbl);
-        IValue v2 = e2.eval(tbl);
+    public IValue eval(MyIDictionary<String, IValue> tbl, IHeap<Integer, IValue> heap) throws MyException {
+        IValue v1 = e1.eval(tbl,heap);
+        IValue v2 = e2.eval(tbl,heap);
 
         if (op == 3) {
             if (v1.getType().equals(new BoolType())) {

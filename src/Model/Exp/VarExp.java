@@ -2,6 +2,7 @@ package Model.Exp;
 
 import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
+import Model.ProgrState.Helper.Heap.IHeap;
 import Model.Value.IValue;
 
 public class VarExp implements IExp{
@@ -13,7 +14,7 @@ public class VarExp implements IExp{
 
 
     @Override
-    public IValue eval(MyIDictionary<String, IValue> tbl) throws MyException {
+    public IValue eval(MyIDictionary<String, IValue> tbl, IHeap<Integer, IValue> heap) throws MyException {
         if(tbl.containsKey(id)){
             return tbl.get(id);
         }

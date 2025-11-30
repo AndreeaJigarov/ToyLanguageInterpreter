@@ -3,6 +3,7 @@ package Model.Stmt;
 import Exceptions.MyException;
 import Model.Exp.IExp;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
+import Model.ProgrState.Helper.Heap.IHeap;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.PrgState;
 import Model.Type.BoolType;
@@ -28,8 +29,9 @@ public class IfStmt implements IStmt{
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, IValue> symTbl =  state.getSymTable();
         MyIStack<IStmt> stk = state.getExeStack();
+        IHeap<Integer, IValue> heap = state.getHeap();
 
-        IValue cond = exp.eval(symTbl);
+        IValue cond = exp.eval(symTbl, heap);
         if (!cond.getType().equals(new BoolType())) {
             throw new MyException("Condition Type Error");
         }

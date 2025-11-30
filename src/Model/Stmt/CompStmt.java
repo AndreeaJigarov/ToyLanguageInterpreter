@@ -22,7 +22,8 @@ public class CompStmt implements IStmt {
     }
 
     public String toString(){
-        return "("+first + ";" + second +")";
+        return first + ";\n" + second;
+        //return "("+first + ";" + second +")";
     }
 
 

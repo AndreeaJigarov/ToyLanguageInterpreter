@@ -78,13 +78,16 @@ public class Repository implements IRepository {
             for (IValue val : state.getOut()) {
                 logFile.println(val);
             }
-            logFile.println("FileTable:");
 
-//            logFile.println("FileTable:");
-//            for (StringValue fileName : state.getFileTable().getKeys()) {
-//                logFile.println(fileName.getVal());
-//            }
-            logFile.println(); // blank line between states
+            logFile.println("FileTable:");
+            for (StringValue fileName : state.getFileTable().getKeys()) {
+                logFile.println(fileName.getValue());
+            }
+
+            logFile.println("Heap:");
+            logFile.println(state.getHeap().toString());
+
+            logFile.println();
         } catch (IOException e) {
             throw new MyException("Logging failed: " + e.getMessage());
         }

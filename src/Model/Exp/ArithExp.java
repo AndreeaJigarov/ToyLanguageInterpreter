@@ -2,6 +2,7 @@ package Model.Exp;
 
 import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
+import Model.ProgrState.Helper.Heap.IHeap;
 import Model.Type.IntType;
 import Model.Value.IValue;
 import Model.Value.IntValue;
@@ -29,11 +30,11 @@ public class ArithExp implements IExp{
     }
 
     @Override
-    public IValue eval(MyIDictionary<String, IValue> tbl) throws MyException {
+    public IValue eval(MyIDictionary<String, IValue> tbl, IHeap<Integer, IValue> heap) throws MyException {
         IValue v1,v2;
-        v1 =e1.eval(tbl);
+        v1 =e1.eval(tbl,heap);
         if(v1.getType().equals(new IntType())){
-            v2 =e2.eval(tbl);
+            v2 =e2.eval(tbl,heap);
             if(v2.getType().equals(new IntType())){
                 IntValue i1 = (IntValue) v1;
                 IntValue i2 = (IntValue) v2;

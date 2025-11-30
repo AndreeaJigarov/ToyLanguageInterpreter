@@ -2,6 +2,7 @@ package Model.Stmt;
 
 import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
+import Model.ProgrState.Helper.Heap.IHeap;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.PrgState;
 import Model.Exp.IExp;
@@ -25,9 +26,10 @@ public class AssignStmt implements IStmt {
     public PrgState execute(PrgState state) throws MyException {
         MyIStack<IStmt> stk = state.getExeStack();
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
+        IHeap<Integer, IValue> heap = state.getHeap();
 
         if (symTbl.containsKey(id)){
-            IValue value = exp.eval(symTbl);
+            IValue value = exp.eval(symTbl, heap);
             IType typId = (symTbl.get(id)).getType();
             if(value.getType().equals(typId)){
                 symTbl.update(id,value);
