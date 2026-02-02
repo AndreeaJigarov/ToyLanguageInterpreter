@@ -296,6 +296,29 @@ public class Interpreter {
             Repository repositorySwitch = new Repository(prgSwitch, "logSwitch.txt");
             Controller controllerSwitch = new Controller(repositorySwitch);
 
+            //FOR STATEMENT
+            // v=20; (for(v=0; v<3; v=v+1) fork(print(v); v=v+1)); print(v*10)
+            IStmt exFor = new CompStmt(
+                    new VarDeclStmt("v", new IntType()),
+                    new CompStmt(
+                            new AssignStmt("v", new Model.Exp.ValueExp(new Model.Value.IntValue(20))),
+                            new CompStmt(
+                                    new ForStmt("v",
+                                            new Model.Exp.ValueExp(new Model.Value.IntValue(0)),
+                                            new Model.Exp.ValueExp(new Model.Value.IntValue(3)),
+                                            new Model.Exp.ArithExp('+', new Model.Exp.VarExp("v"), new Model.Exp.ValueExp(new Model.Value.IntValue(1))),
+                                            new ForkStmt(new CompStmt(
+                                                    new PrintStmt(new Model.Exp.VarExp("v")),
+                                                    new AssignStmt("v", new Model.Exp.ArithExp('+', new Model.Exp.VarExp("v"), new Model.Exp.ValueExp(new Model.Value.IntValue(1))))
+                                            ))
+                                    ),
+                                    new PrintStmt(new Model.Exp.ArithExp('*', new Model.Exp.VarExp("v"), new Model.Exp.ValueExp(new Model.Value.IntValue(10))))
+                            )
+                    )
+            );
+            PrgState prgFor = new PrgState(exFor);
+            Repository repositoryFor = new Repository(prgFor, "logFor.txt");
+            Controller controllerFor= new Controller(repositoryFor);
 
 
 
@@ -314,6 +337,7 @@ public class Interpreter {
             menu.addCommand(new RunExample("10", exFork.toString(), controllerFork));
             /// work at home!!!!1
             menu.addCommand(new RunExample("11", exSwitch.toString(), controllerSwitch));
+            menu.addCommand(new RunExample("12", exFor.toString(), controllerFor));
             menu.show();
 
 

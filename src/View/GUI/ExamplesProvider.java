@@ -236,6 +236,28 @@ public class ExamplesProvider {
         );
         examples.add(exSwitch);
 
+        //FOR
+        // v=20; (for(v=0; v<3; v=v+1) fork(print(v); v=v+1)); print(v*10)
+        IStmt exFor = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new Model.Exp.ValueExp(new Model.Value.IntValue(20))),
+                        new CompStmt(
+                                new ForStmt("v",
+                                        new Model.Exp.ValueExp(new Model.Value.IntValue(0)),
+                                        new Model.Exp.ValueExp(new Model.Value.IntValue(3)),
+                                        new Model.Exp.ArithExp('+', new Model.Exp.VarExp("v"), new Model.Exp.ValueExp(new Model.Value.IntValue(1))),
+                                        new ForkStmt(new CompStmt(
+                                                new PrintStmt(new Model.Exp.VarExp("v")),
+                                                new AssignStmt("v", new Model.Exp.ArithExp('+', new Model.Exp.VarExp("v"), new Model.Exp.ValueExp(new Model.Value.IntValue(1))))
+                                        ))
+                                ),
+                                new PrintStmt(new Model.Exp.ArithExp('*', new Model.Exp.VarExp("v"), new Model.Exp.ValueExp(new Model.Value.IntValue(10))))
+                        )
+                )
+        );
+        examples.add(exFor);
+
         return examples;
     }
 }
