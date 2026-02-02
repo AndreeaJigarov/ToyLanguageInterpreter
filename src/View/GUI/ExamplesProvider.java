@@ -258,6 +258,45 @@ public class ExamplesProvider {
         );
         examples.add(exFor);
 
+        // SLEEP
+        // v=0; (while(v<3) (fork(print(v);v=v+1);v=v+1); sleep(5); print(v*10)
+        IStmt exSleep = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ValueExp(new IntValue(0))),
+                        new CompStmt(
+                                new WhileStmt(
+                                        new RelationalExp(new VarExp("v"), new ValueExp(new IntValue(3)), "<"),
+                                        new CompStmt(
+                                                new ForkStmt(new CompStmt(
+                                                        new PrintStmt(new VarExp("v")),
+                                                        new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                                )),
+                                                new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                        )
+                                ),
+                                new CompStmt(
+                                        new SleepStmt(5),
+                                        new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+                                )
+                        )
+                )
+        );
+        examples.add(exSleep);
+
+        // v=20; wait(10); print(v*10)
+        IStmt exWait = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ValueExp(new IntValue(20))),
+                        new CompStmt(
+                                new WaitStmt(10),
+                                new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+                        )
+                )
+        );
+        examples.add(exWait);
+
         return examples;
     }
 }

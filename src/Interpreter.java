@@ -321,6 +321,50 @@ public class Interpreter {
             Controller controllerFor= new Controller(repositoryFor);
 
 
+            // SLEEP
+// v=0; (while(v<3) (fork(print(v);v=v+1);v=v+1); sleep(5); print(v*10)
+            IStmt exSleep = new CompStmt(
+                    new VarDeclStmt("v", new IntType()),
+                    new CompStmt(
+                            new AssignStmt("v", new ValueExp(new IntValue(0))),
+                            new CompStmt(
+                                    new WhileStmt(
+                                            new RelationalExp(new VarExp("v"), new ValueExp(new IntValue(3)), "<"),
+                                            new CompStmt(
+                                                    new ForkStmt(new CompStmt(
+                                                            new PrintStmt(new VarExp("v")),
+                                                            new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                                    )),
+                                                    new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                            )
+                                    ),
+                                    new CompStmt(
+                                            new SleepStmt(5),
+                                            new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+                                    )
+                            )
+                    )
+            );
+            PrgState prgSleep = new PrgState(exSleep);
+            Repository repositorySleep = new Repository(prgSleep, "logSleep.txt");
+            Controller controllerSleep = new Controller(repositorySleep);
+
+
+            // WAIT
+            // v=20; wait(10); print(v*10)
+            IStmt exWait = new CompStmt(
+                    new VarDeclStmt("v", new IntType()),
+                    new CompStmt(
+                            new AssignStmt("v", new ValueExp(new IntValue(20))),
+                            new CompStmt(
+                                    new WaitStmt(10),
+                                    new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+                            )
+                    )
+            );
+            PrgState prgWait = new PrgState(exWait);
+            Repository repositoryWait = new Repository(prgWait, "logWait.txt");
+            Controller controllerWait = new Controller(repositoryWait);
 
 
             TextMenu menu = new TextMenu();
@@ -338,6 +382,8 @@ public class Interpreter {
             /// work at home!!!!1
             menu.addCommand(new RunExample("11", exSwitch.toString(), controllerSwitch));
             menu.addCommand(new RunExample("12", exFor.toString(), controllerFor));
+            menu.addCommand(new RunExample("13", exSleep.toString(), controllerSleep));
+            menu.addCommand(new RunExample("14", exWait.toString(), controllerWait));
             menu.show();
 
 
