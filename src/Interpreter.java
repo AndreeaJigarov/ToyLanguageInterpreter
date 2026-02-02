@@ -421,6 +421,28 @@ public class Interpreter {
             Controller controllerRepeat = new Controller(repositoryRepeat);
 
 
+            // Ref int a; Ref int b; int v; new(a,0); new(b,0); wh(a,1); wh(b,2);
+// v=(rh(a)<rh(b))?100:200; print(v); v=((rh(b)-2)>rh(a))?100:200; print(v) [cite: 287-293]
+            IStmt exCond = new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
+                    new CompStmt(new VarDeclStmt("b", new RefType(new IntType())),
+                            new CompStmt(new VarDeclStmt("v", new IntType()),
+                                    new CompStmt(new NewStmt("a", new ValueExp(new IntValue(0))),
+                                            new CompStmt(new NewStmt("b", new ValueExp(new IntValue(0))),
+                                                    new CompStmt(new WriteHeapStmt("a", new ValueExp(new IntValue(1))),
+                                                            new CompStmt(new WriteHeapStmt("b", new ValueExp(new IntValue(2))),
+                                                                    new CompStmt(new CondAssignStmt("v",
+                                                                            new RelationalExp(new ReadHeapExp(new VarExp("a")), new ReadHeapExp(new VarExp("b")), "<"),
+                                                                            new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),
+                                                                            new CompStmt(new PrintStmt(new VarExp("v")),
+                                                                                    new CompStmt(new CondAssignStmt("v",
+                                                                                            new RelationalExp(new ArithExp('-', new ReadHeapExp(new VarExp("b")), new ValueExp(new IntValue(2))), new ReadHeapExp(new VarExp("a")), ">"),
+                                                                                            new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),
+                                                                                            new PrintStmt(new VarExp("v"))))))))))));
+            PrgState prgCond = new PrgState(exCond);
+            Repository repositoryCond = new Repository(prgCond, "logCond.txt");
+            Controller controllerCond = new Controller(repositoryCond);
+
+
             TextMenu menu = new TextMenu();
             menu.addCommand(new ExitCommand("0", "exit")); // Changed to 0 for exit
             menu.addCommand(new RunExample("1", ex1.toString(), controller1));
@@ -440,6 +462,7 @@ public class Interpreter {
             menu.addCommand(new RunExample("14", exWait.toString(), controllerWait));
             menu.addCommand(new RunExample("15", exMul.toString(), controllerMul));
             menu.addCommand(new RunExample("16", exRepeat.toString(), controllerRepeat));
+            menu.addCommand(new RunExample("17", exCond.toString(), controllerCond));
             menu.show();
 
 

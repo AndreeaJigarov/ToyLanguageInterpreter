@@ -15,7 +15,7 @@ public class SleepStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        // Requirement 2a: pop the statement [cite: 328]
+        // Requirement 2a: pop the statement
         if (number > 0) {
             // Requirement 2a: if number != 0 push sleep(number-1) back on stack
             MyIStack<IStmt> stack = state.getExeStack();
