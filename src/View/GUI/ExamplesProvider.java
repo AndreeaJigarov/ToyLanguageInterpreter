@@ -297,6 +297,27 @@ public class ExamplesProvider {
         );
         examples.add(exWait);
 
+        // EXAMPLE USE EXPRESSION MUL
+        // v1=2; v2=3; (if (v1 > 0) then print(MUL(v1,v2)) else print (v1))
+        IStmt exMul = new CompStmt(
+                new VarDeclStmt("v1", new IntType()),
+                new CompStmt(
+                        new VarDeclStmt("v2", new IntType()),
+                        new CompStmt(
+                                new AssignStmt("v1", new ValueExp(new IntValue(2))),
+                                new CompStmt(
+                                        new AssignStmt("v2", new ValueExp(new IntValue(3))),
+                                        new IfStmt(
+                                                new RelationalExp(new VarExp("v1"), new ValueExp(new IntValue(0)), ">"),
+                                                new PrintStmt(new MulExp(new VarExp("v1"), new VarExp("v2"))),
+                                                new PrintStmt(new VarExp("v1"))
+                                        )
+                                )
+                        )
+                )
+        );
+        examples.add(exMul);
+
         return examples;
     }
 }

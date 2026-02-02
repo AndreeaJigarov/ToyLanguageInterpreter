@@ -366,6 +366,30 @@ public class Interpreter {
             Repository repositoryWait = new Repository(prgWait, "logWait.txt");
             Controller controllerWait = new Controller(repositoryWait);
 
+            // MUL EXPRESSION
+            // v1=2; v2=3; (if (v1 > 0) then print(MUL(v1,v2)) else print (v1))
+            IStmt exMul = new CompStmt(
+                    new VarDeclStmt("v1", new IntType()),
+                    new CompStmt(
+                            new VarDeclStmt("v2", new IntType()),
+                            new CompStmt(
+                                    new AssignStmt("v1", new ValueExp(new IntValue(2))),
+                                    new CompStmt(
+                                            new AssignStmt("v2", new ValueExp(new IntValue(3))),
+                                            new IfStmt(
+                                                    new RelationalExp(new VarExp("v1"), new ValueExp(new IntValue(0)), ">"),
+                                                    new PrintStmt(new MulExp(new VarExp("v1"), new VarExp("v2"))),
+                                                    new PrintStmt(new VarExp("v1"))
+                                            )
+                                    )
+                            )
+                    )
+            );
+            PrgState prgMul = new PrgState(exMul);
+            Repository repositoryMul = new Repository(prgMul, "logMul.txt");
+            Controller controllerMul = new Controller(repositoryMul);
+
+
 
             TextMenu menu = new TextMenu();
             menu.addCommand(new ExitCommand("0", "exit")); // Changed to 0 for exit
@@ -379,11 +403,12 @@ public class Interpreter {
             menu.addCommand(new RunExample("8", exGC.toString(), controllerGC));
             menu.addCommand(new RunExample("9", exWhile.toString(), controllerWhile));
             menu.addCommand(new RunExample("10", exFork.toString(), controllerFork));
-            /// work at home!!!!1
+            //// work at home!!!!1
             menu.addCommand(new RunExample("11", exSwitch.toString(), controllerSwitch));
             menu.addCommand(new RunExample("12", exFor.toString(), controllerFor));
             menu.addCommand(new RunExample("13", exSleep.toString(), controllerSleep));
             menu.addCommand(new RunExample("14", exWait.toString(), controllerWait));
+            menu.addCommand(new RunExample("15", exMul.toString(), controllerMul));
             menu.show();
 
 
