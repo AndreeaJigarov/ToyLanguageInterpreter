@@ -389,6 +389,36 @@ public class Interpreter {
             Repository repositoryMul = new Repository(prgMul, "logMul.txt");
             Controller controllerMul = new Controller(repositoryMul);
 
+            // REPEAT UNTIL
+            IStmt exRepeat = new CompStmt(
+                    new VarDeclStmt("v", new IntType()),
+                    new CompStmt(
+                            new AssignStmt("v", new ValueExp(new IntValue(0))),
+                            new CompStmt(
+                                    new RepeatUntilStmt(
+                                            new CompStmt(
+                                                    new ForkStmt(new CompStmt(new PrintStmt(new VarExp("v")), new AssignStmt("v", new ArithExp('-', new VarExp("v"), new ValueExp(new IntValue(1)))))),
+                                                    new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                            ),
+                                            new RelationalExp(new VarExp("v"), new ValueExp(new IntValue(3)), "==")
+                                    ),
+                                    new CompStmt(
+                                            new VarDeclStmt("x", new IntType()),
+                                            new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(1))),
+                                                    new CompStmt(new VarDeclStmt("y", new IntType()),
+                                                            new CompStmt(new AssignStmt("y", new ValueExp(new IntValue(2))),
+                                                                    new CompStmt(new VarDeclStmt("z", new IntType()),
+                                                                            new CompStmt(new AssignStmt("z", new ValueExp(new IntValue(3))),
+                                                                                    new CompStmt(new VarDeclStmt("w", new IntType()),
+                                                                                            new CompStmt(new AssignStmt("w", new ValueExp(new IntValue(4))),
+                                                                                                    new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10)))))))))))
+                                    )
+                            )
+                    )
+            );
+            PrgState prgRepeat = new PrgState(exRepeat);
+            Repository repositoryRepeat = new Repository(prgRepeat, "logRepeat.txt");
+            Controller controllerRepeat = new Controller(repositoryRepeat);
 
 
             TextMenu menu = new TextMenu();
@@ -409,6 +439,7 @@ public class Interpreter {
             menu.addCommand(new RunExample("13", exSleep.toString(), controllerSleep));
             menu.addCommand(new RunExample("14", exWait.toString(), controllerWait));
             menu.addCommand(new RunExample("15", exMul.toString(), controllerMul));
+            menu.addCommand(new RunExample("16", exRepeat.toString(), controllerRepeat));
             menu.show();
 
 

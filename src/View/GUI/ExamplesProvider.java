@@ -318,6 +318,37 @@ public class ExamplesProvider {
         );
         examples.add(exMul);
 
+
+
+        // REPEAT UNTIL
+        IStmt exRepeat = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ValueExp(new IntValue(0))),
+                        new CompStmt(
+                                new RepeatUntilStmt(
+                                        new CompStmt(
+                                                new ForkStmt(new CompStmt(new PrintStmt(new VarExp("v")), new AssignStmt("v", new ArithExp('-', new VarExp("v"), new ValueExp(new IntValue(1)))))),
+                                                new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                        ),
+                                        new RelationalExp(new VarExp("v"), new ValueExp(new IntValue(3)), "==")
+                                ),
+                                new CompStmt(
+                                        new VarDeclStmt("x", new IntType()),
+                                        new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(1))),
+                                                new CompStmt(new VarDeclStmt("y", new IntType()),
+                                                        new CompStmt(new AssignStmt("y", new ValueExp(new IntValue(2))),
+                                                                new CompStmt(new VarDeclStmt("z", new IntType()),
+                                                                        new CompStmt(new AssignStmt("z", new ValueExp(new IntValue(3))),
+                                                                                new CompStmt(new VarDeclStmt("w", new IntType()),
+                                                                                        new CompStmt(new AssignStmt("w", new ValueExp(new IntValue(4))),
+                                                                                                new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10)))))))))))
+                                )
+                        )
+                )
+        );
+        examples.add(exRepeat);
+
         return examples;
     }
 }

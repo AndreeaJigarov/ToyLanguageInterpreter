@@ -244,3 +244,987 @@ FileTable:
 Heap:
 {}
 
+>>> ProgramState ID: 14
+ExeStack:
+int v1;
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+1
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1;
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+1
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1;
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+1
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1;
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v1
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2;
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+int v2
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2;
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v1=2
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 0
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3;
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+v2=3
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+(IF(v1 > 0) THEN(print(MUL(v1, v2)))ELSE(print(v1)))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+print(MUL(v1, v2))
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 14
+ExeStack:
+SymTable:
+v1 --> 2
+v2 --> 3
+Out:
+1
+FileTable:
+Heap:
+{}
+
