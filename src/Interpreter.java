@@ -260,6 +260,46 @@ public class Interpreter {
             Repository repositoryFork = new Repository(prgFork, "saveFile10.txt");
             Controller controllerFork = new Controller(repositoryFork);
 
+            // Example 11: Switch Statement
+// int a; int b; int c; a=1; b=2; c=5; (switch(a*10) (case(b*c): print(a);print(b)) (case(10): print(100);print(200)) (default: print(300))); print(300)
+            IStmt exSwitch = new CompStmt(
+                    new VarDeclStmt("a", new IntType()),
+                    new CompStmt(
+                            new VarDeclStmt("b", new IntType()),
+                            new CompStmt(
+                                    new VarDeclStmt("c", new IntType()),
+                                    new CompStmt(
+                                            new AssignStmt("a", new ValueExp(new IntValue(1))),
+                                            new CompStmt(
+                                                    new AssignStmt("b", new ValueExp(new IntValue(2))),
+                                                    new CompStmt(
+                                                            new AssignStmt("c", new ValueExp(new IntValue(5))),
+                                                            new CompStmt(
+                                                                    new SwitchStmt(
+                                                                            new ArithExp('*', new VarExp("a"), new ValueExp(new IntValue(10))),
+                                                                            new ArithExp('*', new VarExp("b"), new VarExp("c")),
+                                                                            new CompStmt(new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b"))),
+                                                                            new ValueExp(new IntValue(10)),
+                                                                            new CompStmt(new PrintStmt(new ValueExp(new IntValue(100))), new PrintStmt(new ValueExp(new IntValue(200)))),
+                                                                            new PrintStmt(new ValueExp(new IntValue(300)))
+                                                                    ),
+                                                                    new PrintStmt(new ValueExp(new IntValue(300)))
+                                                            )
+                                                    )
+                                            )
+                                    )
+                            )
+                    )
+            );
+
+            PrgState prgSwitch = new PrgState(exSwitch);
+            Repository repositorySwitch = new Repository(prgSwitch, "logSwitch.txt");
+            Controller controllerSwitch = new Controller(repositorySwitch);
+
+
+
+
+
             TextMenu menu = new TextMenu();
             menu.addCommand(new ExitCommand("0", "exit")); // Changed to 0 for exit
             menu.addCommand(new RunExample("1", ex1.toString(), controller1));
@@ -272,7 +312,11 @@ public class Interpreter {
             menu.addCommand(new RunExample("8", exGC.toString(), controllerGC));
             menu.addCommand(new RunExample("9", exWhile.toString(), controllerWhile));
             menu.addCommand(new RunExample("10", exFork.toString(), controllerFork));
+            /// work at home!!!!1
+            menu.addCommand(new RunExample("11", exSwitch.toString(), controllerSwitch));
             menu.show();
+
+
 
         } catch (MyException e) {
             System.out.println(e.getMessage());
