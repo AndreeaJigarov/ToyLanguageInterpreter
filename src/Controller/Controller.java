@@ -9,66 +9,204 @@ import Model.Value.IValue;
 import Model.Value.RefValue;
 import Repository.IRepository;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
+import java.util.concurrent.Callable;
 
 public class Controller  implements IController {
-    @Override
-    public PrgState oneStep(PrgState prgState) throws MyException {
-        MyIStack<IStmt> stk = prgState.getExeStack();
-        if(stk.isEmpty())throw new MyException("prgstate stack is empty");
-        IStmt crtStmt = stk.pop();
+    IRepository repository;
+    private ExecutorService executor; // Task 12
 
-        crtStmt.execute(prgState);  // Execute modifies prgState in place
-        return prgState;  // Return the updated state
+    // -- removeeeeee task 7
+//    @Override
+//    public PrgState oneStep(PrgState prgState) throws MyException {
+//        MyIStack<IStmt> stk = prgState.getExeStack();
+//        if(stk.isEmpty())throw new MyException("prgstate stack is empty");
+//        IStmt crtStmt = stk.pop();
+//
+//        crtStmt.execute(prgState);  // Execute modifies prgState in place
+//        return prgState;  // Return the updated state
+//    }
+
+    // Task 10
+    public List<PrgState> removeCompletedPrg(List<PrgState> inPrgList) {
+        return inPrgList.stream().filter(PrgState::isNotCompleted).collect(Collectors.toList());
     }
 
-    IRepository repository;
+    // Task 14: New method
+    public void oneStepForAllPrg(List<PrgState> prgList) throws MyException {
+        // Log before execution
+        prgList.forEach(prg -> {
+            try {
+                for (PrgState prog : prgList) {
+                    repository.logPrgStateExec(prog);
+                }
+            } catch (MyException e) {
+                System.err.println("Log error: " + e.getMessage());
+            }
+        });
+        // Prepare callables
+        List<Callable<PrgState>> callList = prgList.stream()
+                .map((PrgState p) -> (Callable<PrgState>) p::oneStep)
+                .collect(Collectors.toList());
+        List<PrgState> newPrgList;
+        try {
+            // Execute concurrently
+            newPrgList = executor.invokeAll(callList).stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        } catch ( Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    })
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+
+        } catch (InterruptedException e) {
+            throw new MyException("Interrupted: " + e.getMessage());
+        }
+        // Add new threads
+        prgList.addAll(newPrgList);
+
+        // Log after execution
+        for (PrgState prg : prgList) {
+            try {
+                repository.logPrgStateExec(prg);
+            } catch (MyException e) {
+                System.err.println("Log error: " + e.getMessage());
+            }
+        };
+        // Save to repo
+        repository.setPrgList(prgList);
+    }
 
     public Controller(IRepository repository) {
         this.repository = repository;
     }
 
-    public void allStep() throws MyException {
-        PrgState prg = repository.getCrtPrg();
-        System.out.println("Initial state:");
-        System.out.println(prg);
-        repository.logPrgStateExec(prg); //added
+    //public void allStep() throws MyException {
+//        PrgState prg = repository.getCrtPrg();
+//        System.out.println("Initial state:");
+//        System.out.println(prg);
+//        repository.logPrgStateExec(prg); //added
+//
+//
+//        while(!prg.getExeStack().isEmpty()){
+//            prg = oneStep(prg);
+//            System.out.println("After one step:");
+//            System.out.println(prg);
+//            repository.logPrgStateExec(prg);
+//            //added
+//            var safeAddresses = getAllAddresses(
+//                    prg.getSymTable().getValues(),
+//                    prg.getHeap().getContent()
+//            );
+//
+//            prg.getHeap().setContent(
+//                    prg.getHeap().getContent().entrySet().stream()
+//                            .filter(e -> safeAddresses.contains(e.getKey()))
+//                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
+//            );
+//
+//            repository.logPrgStateExec(prg);
+//        }
+//    }
 
+    void conservativeGarbageCollector(List<PrgState> prgList) {
 
-        while(!prg.getExeStack().isEmpty()){
-            prg = oneStep(prg);
-            System.out.println("After one step:");
-            System.out.println(prg);
-            repository.logPrgStateExec(prg);
-            //added
-            var safeAddresses = getAllAddresses(
-                    prg.getSymTable().getValues(),
-                    prg.getHeap().getContent()
-            );
-
-            prg.getHeap().setContent(
-                    prg.getHeap().getContent().entrySet().stream()
-                            .filter(e -> safeAddresses.contains(e.getKey()))
-                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-            );
-
-            repository.logPrgStateExec(prg);
-        }
-    }
-    public static List<Integer> getAllAddresses(Collection<IValue> symTableValues, Map<Integer, IValue> heap) {
-        List<Integer> addresses = new ArrayList<>();
-
-        // Start with addresses from SymTable
-        symTableValues.stream()
+        // all addresses from all symtables
+        List<Integer> addresses = prgList.stream()
+                .flatMap(prg -> prg.getSymTable().getValues().stream())
                 .filter(v -> v instanceof RefValue)
                 .map(v -> ((RefValue) v).getAddress())
-                .forEach(addresses::add);
+                .toList();
 
-        // Follow references inside the heap
+        // filter heap
+        Map<Integer, IValue> newHeap = prgList.get(0).getHeap().getContent().entrySet().stream()
+                .filter(e -> addresses.contains(e.getKey()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
+        // shared heap
+        prgList.get(0).getHeap().setContent(newHeap);
+    }
+    // Task 13/15: Rewritten allStep
+    public void allStep() throws MyException {
+        executor = Executors.newFixedThreadPool(2); // Task 12/15
+        List<PrgState> prgList = removeCompletedPrg(repository.getPrgList());
+        while (!prgList.isEmpty()) {
+
+            if (prgList.size() <= 1) {
+                // skip gc when single threaded - most student projects do this
+            } else {
+                conservativeGarbageCollector(prgList);
+            }
+            //conservativeGarbageCollector(prgList);
+
+            oneStepForAllPrg(prgList);
+
+            prgList = removeCompletedPrg(repository.getPrgList());
+        }
+        executor.shutdownNow();
+        repository.setPrgList(prgList);
+    }
+
+
+    // Task 16: Updated garbage collector (handles multiple symTables)
+    private Map<Integer, IValue> safeGarbageCollector(List<Integer> addresses, Map<Integer, IValue> heap) {
+        return heap.entrySet().stream()
+                .filter(e -> addresses.contains(e.getKey()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+//    public static List<Integer> getAllAddresses(Collection<IValue> symTableValues, Map<Integer, IValue> heap) {
+//        List<Integer> addresses = new ArrayList<>();
+//
+//        // Start with addresses from SymTable
+//        symTableValues.stream()
+//                .filter(v -> v instanceof RefValue)
+//                .map(v -> ((RefValue) v).getAddress())
+//                .forEach(addresses::add);
+//
+//        // Follow references inside the heap
+//        boolean changed = true;
+//        while (changed) {
+//            changed = false;
+//            List<Integer> newAddresses = new ArrayList<>();
+//            for (Map.Entry<Integer, IValue> entry : heap.entrySet()) {
+//                int addr = entry.getKey();
+//                IValue value = entry.getValue();
+//                if (value instanceof RefValue refValue) {
+//                    int targetAddr = refValue.getAddress();
+//                    if (addresses.contains(addr) && !addresses.contains(targetAddr)) {
+//                        newAddresses.add(targetAddr);
+//                        changed = true;
+//                    }
+//                }
+//            }
+//            addresses.addAll(newAddresses);
+//        }
+//
+//        return addresses;
+//    }
+//
+//
+
+    // Task 16: Updated to handle list of symTable values
+    public static List<Integer> getAllAddresses(List<Collection<IValue>> symTablesValues, Map<Integer, IValue> heap) {
+        List<Integer> addresses = new ArrayList<>();
+
+        // Addresses from all SymTables
+        addresses.addAll(symTablesValues.stream()
+                .flatMap(Collection::stream)
+                .filter(v -> v instanceof RefValue)
+                .map(v -> ((RefValue) v).getAddress())
+                .toList());
+
+        // Follow references in heap
         boolean changed = true;
         while (changed) {
             changed = false;
@@ -90,7 +228,25 @@ public class Controller  implements IController {
         return addresses;
     }
 
+    public IRepository getRepository() {
+        return repository;
+    }
 
+    public void oneStepGUI() throws MyException {
+        if (executor == null) {
+            executor = Executors.newFixedThreadPool(2);
+        }
 
+        repository.setPrgList(
+                removeCompletedPrg(repository.getPrgList())
+        );
 
+        if (repository.getPrgList().isEmpty()) {
+            executor.shutdownNow();
+            executor = null;
+            return;
+        }
+
+        oneStepForAllPrg(repository.getPrgList());
+    }
 }

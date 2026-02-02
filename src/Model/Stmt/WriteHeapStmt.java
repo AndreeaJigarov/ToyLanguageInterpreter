@@ -2,7 +2,9 @@ package Model.Stmt;
 
 import Exceptions.MyException;
 import Model.Exp.IExp;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
+import Model.Type.IType;
 import Model.Type.RefType;
 import Model.Value.IValue;
 import Model.Value.RefValue;
@@ -43,5 +45,21 @@ public class WriteHeapStmt implements IStmt {
     @Override
     public String toString() {
         return "wH(" + varName + "," + expression + ")";
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typevar = typeEnv.lookup(varName); // tipul variabilei (trebuie să fie RefType)
+        IType typexp = expression.typecheck(typeEnv);  // tipul expresiei
+        if (typevar instanceof RefType) {
+            RefType reft = (RefType) typevar;
+            if (typexp.equals(reft.getInner())) { //if compatible
+                return typeEnv;
+            } else {
+                throw new MyException("WriteHeapStmt: expression type does not match the location type");
+            }
+        } else {
+            throw new MyException("WriteHeapStmt: variable is not of reference type");
+        }
     }
 }

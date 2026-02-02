@@ -3,10 +3,7 @@ package Model.ProgrState.Helper.Heap;
 import Model.Value.IValue;
 import Exceptions.MyException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MyHeap implements IHeap<Integer, IValue> {
@@ -72,5 +69,9 @@ public class MyHeap implements IHeap<Integer, IValue> {
     @Override
     public String toString() {
         return heap.toString();
+    }
+
+    public Set<Map.Entry<Integer, IValue>> entrySet() {
+        return heap.entrySet();
     }
 }

@@ -3,6 +3,7 @@ package Model.Exp;
 import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.Helper.Heap.IHeap;
+import Model.Type.IType;
 import Model.Type.IntType;
 import Model.Value.IValue;
 import Model.Value.IntValue;
@@ -85,6 +86,23 @@ public class ArithExp implements IExp{
     @Override
     public String toString(){
         return e1.toString()+" "+getOpString()+" "+e2.toString();
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typ1,typ2;
+        typ1=e1.typecheck(typeEnv);
+        typ2=e2.typecheck(typeEnv);
+
+        if (typ1.equals(new IntType())){
+            if (typ2.equals(new IntType())){
+                return new IntType();
+            }else
+                throw new MyException("second operand is not an integer");
+
+        }else
+            throw new MyException("first operand is not an integer");
+
     }
 
 }

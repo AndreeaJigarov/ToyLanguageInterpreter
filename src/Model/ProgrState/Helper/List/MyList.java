@@ -46,4 +46,8 @@ public class MyList<T> implements MyIList<T> {
         return list.iterator();
     }
 
+    public List<T> getArrayList(){
+        return list;
+    }
+
 }

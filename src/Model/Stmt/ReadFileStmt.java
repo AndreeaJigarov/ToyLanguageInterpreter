@@ -2,7 +2,9 @@ package Model.Stmt;
 
 import Exceptions.MyException;
 import Model.Exp.IExp;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
+import Model.Type.IType;
 import Model.Type.IntType;
 import Model.Type.StringType;
 import Model.Value.IValue;
@@ -43,12 +45,26 @@ public class ReadFileStmt implements IStmt {
         } catch (IOException | NumberFormatException e) {
             throw new MyException("Read error: " + e.getMessage());
         }
-        return state;
+        //return state;
+        return null;
 
     }
 
     @Override
     public String toString() {
         return "readFile: " + exp.toString() + " , " + varName ;
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typexp = exp.typecheck(typeEnv);  // exp = numele fișierului
+        if (!typexp.equals(new StringType())) {
+            throw new MyException("ReadFileStmt: expression is not of StringType");
+        }
+        IType typevar = typeEnv.lookup(varName);  // varName unde se salveaza valoarea citită
+        if (!typevar.equals(new IntType())) {
+            throw new MyException("ReadFileStmt: variable is not of IntType");
+        }
+        return typeEnv;
     }
 }

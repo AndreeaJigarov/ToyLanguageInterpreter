@@ -1,8 +1,12 @@
 package Model.Stmt;
 
+import Exceptions.MyException;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.PrgState;
 import Model.Stmt.IStmt;
+import Model.Type.IType;
+import Model.Type.StringType;
 
 public class CompStmt implements IStmt {
     IStmt first;
@@ -18,7 +22,8 @@ public class CompStmt implements IStmt {
         MyIStack<IStmt> stack = state.getExeStack();
         stack.push(second);
         stack.push(first);
-        return state;
+        //return state;
+        return null;
     }
 
     public String toString(){
@@ -26,7 +31,13 @@ public class CompStmt implements IStmt {
         //return "("+first + ";" + second +")";
     }
 
-
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        //return second.typecheck(first.typecheck(typeEnv)); -- or directly like this
+        MyIDictionary<String, IType> typEnv1 = first.typecheck(typeEnv);
+        MyIDictionary<String, IType> typEnv2 = second.typecheck(typEnv1);
+        return typEnv2; // this makes all logic of typecheck prgstate function !!!!
+    }
 
 
 }

@@ -4,6 +4,7 @@ import Model.Value.IValue;
 import Exceptions.MyException;
 import java.util.Map;
 import java.util.List;
+import java.util.Set;
 
 public interface IHeap<K, V> {
     int allocate(V value);
@@ -15,4 +16,6 @@ public interface IHeap<K, V> {
     Map<K, V> getContent();
     List<K> getKeys();
     void deallocate(int address);
+
+    public Set<Map.Entry<Integer, IValue>> entrySet();
 }

@@ -13,15 +13,19 @@ import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.Helper.Stack.MyStack;
 import Model.Stmt.IStmt;
 import Model.Stmt.NopStmt;
+import Model.Type.IType;
 import Model.Value.IValue;
 import Model.Value.StringValue;
 
+
 import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PrgState {
     private IHeap<Integer, IValue> heap;
-    private static int ID=0;
+    private static int lastId = 0; // Task 8: Static for ID management , more specific naming
     private int id;
 
     private MyIStack<IStmt>exeStack;
@@ -30,16 +34,32 @@ public class PrgState {
     private FileTable<StringValue, BufferedReader> fileTable;
     private IStmt originalProgram; //good to have cica
 
-    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
+    // wrong for forked threads, it must share the same filetable and heap
+//    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
+//        exeStack = stk;
+//        symTable = symtbl;
+//        out = ot;
+//        this.fileTable = new MyFileTable<>();
+//        this.heap = new MyHeap();
+//        originalProgram = orPrg;// DEEPCOPY recreate entire original program
+//        exeStack.push(orPrg);
+//        this.id = getNewId(); // Task 8: Assign unique ID
+//    }
+
+    private static synchronized int getNewId() { // Task 8: Synchronized for thread safety
+        return lastId++;
+    }
+//for fork constructor
+    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot,
+                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap) {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
-        this.fileTable = new MyFileTable<>();
-        this.heap = new MyHeap();
-        originalProgram = orPrg;// DEEPCOPY recreate entire original program
-        exeStack.push(orPrg);
-        id=ID++;
+        this.fileTable = fileTable;
+        this.heap = heap;
+        this.id = getNewId(); // Task 8: Assign unique ID
     }
+
 
     public PrgState(IStmt ex) {
         originalProgram=ex;
@@ -48,8 +68,13 @@ public class PrgState {
         this.heap = new MyHeap();
         out= new MyList<IValue>();
         fileTable = new MyFileTable<>();
+        try {
+            ex.typecheck(new MyDictionary<String, IType>());  // verifica tipurile cu un env gol
+        } catch (MyException e) {
+            throw new RuntimeException("Typecheck failed: " + e.getMessage());
+        }
         exeStack.push(ex);
-        id=ID++;
+        id=getNewId(); // Task 8
     }
 
     public MyIStack<IStmt> getExeStack() {
@@ -109,9 +134,11 @@ public class PrgState {
     }
 
 
+
+
     public String toString() {
         return "----------------------------------------------- \n " +
-                ">>> ProgramState:" + "ID: " + ID +
+                ">>> ProgramState:" + "ID: " + id + // Task 8: Use instance id
                 "\n ExeStack: " + exeStack.toString() +
                 "\n SymTable: " + symTable.toString() +
                 "\n Out: " + out.toString() +

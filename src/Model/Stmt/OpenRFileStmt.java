@@ -2,7 +2,10 @@ package Model.Stmt;
 
 import Exceptions.MyException;
 import Model.Exp.IExp;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
+import Model.Type.BoolType;
+import Model.Type.IType;
 import Model.Type.StringType;
 import Model.Value.IValue;
 import Model.Value.StringValue;
@@ -35,12 +38,20 @@ public class OpenRFileStmt implements IStmt{
         } catch (IOException e) {
             throw new MyException("File open error: " + e.getMessage());
         }
-        return state;
+        //return state;
+        return null;
     }
 
     @Override
     public String toString() {
         return "openRFile(" + exp.toString() + ")";
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typexp = exp.typecheck(typeEnv);
+        if (typexp.equals(new StringType())) return typeEnv;
+        else throw new MyException("Name of file not StringType");
     }
 
 }

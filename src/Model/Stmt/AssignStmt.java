@@ -42,12 +42,24 @@ public class AssignStmt implements IStmt {
             throw new MyException("the used variable "+id+" nwas not declared before");
 
         }
-        return state;
+        //return state;
+        return null;
     }
 
     @Override
     public String toString() {
         return id+"="+exp.toString();
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typevar =  typeEnv.lookup(id);
+        IType typexp =  exp.typecheck(typeEnv);
+        if(typevar.equals(typexp)){
+            return typeEnv;
+        }else{
+            throw new MyException("Assignment: right hand side and left hand side have different types");
+        }
     }
 
 }

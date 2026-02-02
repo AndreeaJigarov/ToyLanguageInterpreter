@@ -7,6 +7,7 @@ import Model.ProgrState.Helper.Heap.IHeap;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.PrgState;
 import Model.Type.BoolType;
+import Model.Type.IType;
 import Model.Value.BoolValue;
 import Model.Value.IValue;
 
@@ -26,6 +27,19 @@ public class IfStmt implements IStmt{
         return "(IF("+ exp.toString()+") THEN(" +thenS.toString()+")ELSE("+elseS.toString()+"))";
     }
 
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typexp = exp.typecheck(typeEnv);
+        if(typexp.equals(new  BoolType())){
+            thenS.typecheck(typeEnv.clone());
+            elseS.typecheck(typeEnv.clone());
+            return typeEnv;
+        }
+        else
+            throw new MyException("The condition of IF has not the type bool");
+
+    }
+
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, IValue> symTbl =  state.getSymTable();
         MyIStack<IStmt> stk = state.getExeStack();
@@ -38,7 +52,9 @@ public class IfStmt implements IStmt{
         BoolValue bv = (BoolValue) cond;
         if(bv.getValue())stk.push(thenS);
         else  stk.push(elseS);
-        return state;
+        //return state;
+        return null;
+
     }
 
 

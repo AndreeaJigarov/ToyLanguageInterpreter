@@ -15,4 +15,5 @@ public interface FileTable<T, E> {
     List<E> getValues();
     public FileTable<T,E> deepCopy();
     public String toString();
+
 }

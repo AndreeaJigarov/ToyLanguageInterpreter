@@ -2,7 +2,10 @@ package Model.Stmt;
 
 import Exceptions.MyException;
 import Model.Exp.IExp;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
+import Model.Type.BoolType;
+import Model.Type.IType;
 import Model.Value.BoolValue;
 import Model.Value.IValue;
 
@@ -25,4 +28,15 @@ public class WhileStmt implements IStmt {
     }
 
     @Override public String toString() { return "while(" + cond + ") " + body; }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typexp = cond.typecheck(typeEnv);
+        if (typexp.equals(new BoolType())) {
+            body.typecheck(typeEnv.clone());
+            return typeEnv;
+        } else {
+            throw new MyException("While condition not boolean");
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package Model.Stmt;
 
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
 import Model.Type.IType;
 import Model.Type.IntType;
@@ -20,10 +21,17 @@ public class VarDeclStmt implements IStmt{
         var symTbl = state.getSymTable();
         if(symTbl.containsKey(name))throw new MyException("Variable "+name+" already exists");
         symTbl.put(name, type.defaultValue());
-        return state;
+        //return state;
+        return null;
     }
     @Override
     public String toString(){
         return this.type+" "+name ;
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        typeEnv.put(name, type);
+        return typeEnv;
     }
 }

@@ -3,6 +3,8 @@ package Model.Exp;
 import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.Helper.Heap.IHeap;
+import Model.Type.BoolType;
+import Model.Type.IType;
 import Model.Type.IntType;
 import Model.Value.BoolValue;
 import Model.Value.IValue;
@@ -42,4 +44,20 @@ public class RelationalExp implements IExp {
     public String toString() {
         return exp1.toString() + " " + op + " " + exp2.toString();
     }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typ1, typ2;
+        typ1 = exp1.typecheck(typeEnv);
+        typ2 = exp2.typecheck(typeEnv);
+
+        if (typ1.equals(new IntType())){
+            if (typ2.equals(new IntType())){
+                return new BoolType();
+            }else
+                throw new MyException("second operand is not an integer");
+
+        }else
+            throw new MyException("first operand is not an integer");
+    } // maybe here add operator checking too idk man
 }

@@ -1,8 +1,10 @@
 package Model.Stmt;
 
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
 import Model.Exp.IExp;
+import Model.Type.IType;
 import Model.Type.RefType;
 import Model.Value.IValue;
 import Model.Value.RefValue;
@@ -43,5 +45,14 @@ public class NewStmt implements IStmt {
     @Override
     public String toString() {
         return "new(" + varName + "," + expression + ")";
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typevar = typeEnv.lookup(varName); //the id
+        IType typexp = expression.typecheck(typeEnv);
+        if(typevar.equals(new RefType(typexp)))
+            return typeEnv;
+        else throw new MyException("NEW stmt : right hand side and left hand sie have different types");
     }
 }

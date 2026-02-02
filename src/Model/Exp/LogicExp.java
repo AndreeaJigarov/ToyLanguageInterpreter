@@ -4,6 +4,8 @@ import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.Helper.Heap.IHeap;
 import Model.Type.BoolType;
+import Model.Type.IType;
+import Model.Type.IntType;
 import Model.Value.BoolValue;
 import Model.Value.IValue;
 
@@ -70,6 +72,25 @@ public class LogicExp implements IExp{
     @Override
     public String toString(){
         return e1.toString()+" "+getStringOperator()+" "+e2.toString();
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typ1 = e1.typecheck(typeEnv);
+        IType typ2 = e2.typecheck(typeEnv);
+        if (!typ1.equals(new BoolType())) {
+            throw new MyException("First operand is not a bool");
+        }
+        if (!typ2.equals(new BoolType())) {
+            throw new MyException("Second operand is not a bool");
+        }
+        if (op != 1 && op != 2 && op != 3) {
+            throw new MyException("Invalid logical operator");
+        }
+        if (op == 3 && e2 != null) {  // not nu are e2
+            throw new MyException("Not operator takes only one operand");
+        }
+        return new BoolType();
     }
 
 

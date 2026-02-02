@@ -1,5 +1,7 @@
 package Model.ProgrState.Helper.List;
 
+import java.util.List;
+
 public interface MyIList<T> extends Iterable<T>{
 
     public void add(T element);
@@ -9,6 +11,6 @@ public interface MyIList<T> extends Iterable<T>{
     public boolean isEmpty();
 
     public String toString();
-
+    public List<T> getArrayList();
 
 }

@@ -1,11 +1,8 @@
 package Model.ProgrState.Helper.Dictionary;
 
 import Model.Value.IValue;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+import java.util.*;
 
 
 public class MyDictionary<T,E> implements MyIDictionary<T,E>
@@ -56,6 +53,16 @@ public class MyDictionary<T,E> implements MyIDictionary<T,E>
     @Override
     public String toString(){
         return dictionary.toString();
+    }
+
+    @Override
+    public MyIDictionary<T, E> clone() {
+        return deepCopy(); //put this here
+    }
+
+
+    public Set<Map.Entry<T, E>> entrySet() {
+        return dictionary.entrySet();
     }
 
 }

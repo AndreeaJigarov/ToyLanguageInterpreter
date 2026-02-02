@@ -225,6 +225,41 @@ public class Interpreter {
             Repository repositoryWhile = new Repository(prgWhile, "saveFile9.txt");
             Controller controllerWhile = new Controller(repositoryWhile);
 
+
+            IStmt exFork = new CompStmt(
+                    new VarDeclStmt("v", new IntType()),
+                    new CompStmt(
+                            new VarDeclStmt("a", new RefType(new IntType())),
+                            new CompStmt(
+                                    new AssignStmt("v", new ValueExp(new IntValue(10))),
+                                    new CompStmt(
+                                            new NewStmt("a", new ValueExp(new IntValue(22))),
+                                            new CompStmt(
+                                                    new ForkStmt(
+                                                            new CompStmt(
+                                                                    new WriteHeapStmt("a", new ValueExp(new IntValue(30))),
+                                                                    new CompStmt(
+                                                                            new AssignStmt("v", new ValueExp(new IntValue(32))),
+                                                                            new CompStmt(
+                                                                                    new PrintStmt(new VarExp("v")),
+                                                                                    new PrintStmt(new ReadHeapExp(new VarExp("a")))
+                                                                            )
+                                                                    )
+                                                            )
+                                                    ),
+                                                    new CompStmt(
+                                                            new PrintStmt(new VarExp("v")),
+                                                            new PrintStmt(new ReadHeapExp(new VarExp("a")))
+                                                    )
+                                            )
+                                    )
+                            )
+                    )
+            );
+            PrgState prgFork = new PrgState(exFork);
+            Repository repositoryFork = new Repository(prgFork, "saveFile10.txt");
+            Controller controllerFork = new Controller(repositoryFork);
+
             TextMenu menu = new TextMenu();
             menu.addCommand(new ExitCommand("0", "exit")); // Changed to 0 for exit
             menu.addCommand(new RunExample("1", ex1.toString(), controller1));
@@ -236,6 +271,7 @@ public class Interpreter {
             menu.addCommand(new RunExample("7", exHeapWrite.toString(), controllerHeapWrite));
             menu.addCommand(new RunExample("8", exGC.toString(), controllerGC));
             menu.addCommand(new RunExample("9", exWhile.toString(), controllerWhile));
+            menu.addCommand(new RunExample("10", exFork.toString(), controllerFork));
             menu.show();
 
         } catch (MyException e) {
