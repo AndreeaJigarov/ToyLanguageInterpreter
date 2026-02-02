@@ -12,4 +12,5 @@ public class MainApp extends Application { //in turn Application extends Object
     public static void main(String[] args) {
         launch(args); // creates a new object of class application , launch is static
     }
+
 }
