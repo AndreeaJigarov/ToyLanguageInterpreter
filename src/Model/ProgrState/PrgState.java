@@ -154,6 +154,7 @@ public class PrgState {
                 "\n Out: " + out.toString() +
                 "\n FileTable: " + fileTable.toString() +
                 "\n Heap: " + heap.toString()+
+                "\n BarrierTable: " + barrierTable.toString()+
                 "\n----------------------------------------------- \n";
     }
 

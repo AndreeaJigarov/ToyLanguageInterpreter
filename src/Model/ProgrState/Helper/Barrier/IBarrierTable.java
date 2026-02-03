@@ -11,4 +11,5 @@ public interface IBarrierTable {
     boolean contains(int index);
     Map<Integer, BarrierEntry> getContent();
     ReentrantLock getLock();
+    String toString();
 }

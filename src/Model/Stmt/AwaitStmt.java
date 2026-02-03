@@ -54,8 +54,7 @@ public class AwaitStmt implements IStmt {
                 // Push back onto the stack to wait for the next execution cycle
                 state.getExeStack().push(this);
             } else {
-                // Threshold met! Do nothing (effectively popping the statement)
-                // This allows the thread to proceed to the next instruction.
+
             }
         } finally {
             lock.unlock();

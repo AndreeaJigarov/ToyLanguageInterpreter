@@ -62,4 +62,8 @@ public class BarrierTable implements IBarrierTable {
     public ReentrantLock getLock() {
         return this.lock;
     }
+
+    public String toString() {
+        return table.toString();
+    }
 }

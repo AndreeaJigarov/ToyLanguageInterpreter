@@ -9,7 +9,7 @@ public class BarrierEntry {
 
     public BarrierEntry(int threshold) {
         this.threshold = threshold;
-        this.threadIds = new ArrayList<>(); // [cite: 123]
+        this.threadIds = new ArrayList<>(); //
     }
 
     public int getThreshold() { return threshold; }
@@ -17,6 +17,6 @@ public class BarrierEntry {
 
     @Override
     public String toString() {
-        return "(" + threshold + ", " + threadIds.toString() + ")"; // [cite: 140]
+        return "(" + threshold + ", " + threadIds.toString() + ")";
     }
 }

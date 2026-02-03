@@ -101,6 +101,9 @@ public class Repository implements IRepository {
             logFile.println("Heap:");
             logFile.println(state.getHeap().toString());
 
+            logFile.println("BarierTable:");
+            logFile.println(state.getBarrierTable().toString());
+
             logFile.println();
         } catch (IOException e) {
             throw new MyException("Logging failed: " + e.getMessage());
