@@ -36,51 +36,35 @@ public class Controller  implements IController {
         return inPrgList.stream().filter(PrgState::isNotCompleted).collect(Collectors.toList());
     }
 
-    // Task 14: New method
     public void oneStepForAllPrg(List<PrgState> prgList) throws MyException {
-        // Log before execution
-        prgList.forEach(prg -> {
-            try {
-                for (PrgState prog : prgList) {
-                    repository.logPrgStateExec(prog);
-                }
-            } catch (MyException e) {
-                System.err.println("Log error: " + e.getMessage());
-            }
-        });
-        // Prepare callables
+        // Log each program exactly ONCE before execution
+        for (PrgState prg : prgList) {
+            repository.logPrgStateExec(prg);
+        }
+
         List<Callable<PrgState>> callList = prgList.stream()
                 .map((PrgState p) -> (Callable<PrgState>) p::oneStep)
                 .collect(Collectors.toList());
+
         List<PrgState> newPrgList;
         try {
-            // Execute concurrently
             newPrgList = executor.invokeAll(callList).stream()
                     .map(future -> {
-                        try {
-                            return future.get();
-                        } catch ( Exception e) {
-                            throw new RuntimeException(e);
-                        }
+                        try { return future.get(); }
+                        catch (Exception e) { throw new RuntimeException(e); }
                     })
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList());
-
         } catch (InterruptedException e) {
             throw new MyException("Interrupted: " + e.getMessage());
         }
-        // Add new threads
+
         prgList.addAll(newPrgList);
 
-        // Log after execution
+        // Log each program exactly ONCE after execution
         for (PrgState prg : prgList) {
-            try {
-                repository.logPrgStateExec(prg);
-            } catch (MyException e) {
-                System.err.println("Log error: " + e.getMessage());
-            }
-        };
-        // Save to repo
+            repository.logPrgStateExec(prg);
+        }
         repository.setPrgList(prgList);
     }
 

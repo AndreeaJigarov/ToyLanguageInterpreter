@@ -31,6 +31,10 @@ public class InterpreterWindow {
     private final TableView<Map.Entry<Integer, IValue>> heapTable = new TableView<>();
     private final TableView<Map.Entry<String, IValue>> symTable = new TableView<>();
 
+    //LOCK
+    private final TableView<Map.Entry<Integer, Integer>> lockTable = new TableView<>();
+
+
     private final TextField nrPrgStates = new TextField();
     private final Button oneStepBtn = new Button("Run one step");
 
@@ -42,6 +46,9 @@ public class InterpreterWindow {
         setupHeapTable();
         setupSymTable();
 
+        //LOCK TABLE
+        setupLockTable();
+
         //titled panes
         TitledPane prgPane = new TitledPane("PrgState IDs", prgIds);
         TitledPane stackPane = new TitledPane("ExeStack", exeStack);
@@ -50,8 +57,11 @@ public class InterpreterWindow {
         TitledPane outPane = new TitledPane("Out", out);
         TitledPane filePane = new TitledPane("FileTable", fileTable);
 
+        //Lock pane
+        TitledPane lockPane = new TitledPane("LockTable", lockTable);
+
         VBox left = new VBox(10, prgPane, stackPane);
-        VBox mid  = new VBox(10, heapPane, symPane);
+        VBox mid  = new VBox(10, heapPane, symPane,lockPane);
         VBox right = new VBox(10, outPane, filePane);
 
         VBox.setVgrow(prgIds, Priority.ALWAYS);
@@ -60,6 +70,7 @@ public class InterpreterWindow {
         VBox.setVgrow(symTable, Priority.ALWAYS);
         VBox.setVgrow(out, Priority.ALWAYS);
         VBox.setVgrow(fileTable, Priority.ALWAYS);
+        VBox.setVgrow(lockTable, Priority.ALWAYS);
 
 
         // BOTTOM CONTROLS
@@ -67,7 +78,6 @@ public class InterpreterWindow {
         nrPrgStates.setAlignment(Pos.CENTER);
         nrPrgStates.setMaxWidth(80);
 
-        // i can set style after
 
 
         HBox bottomBox = new HBox(10,
@@ -114,7 +124,7 @@ public class InterpreterWindow {
         stage.setTitle("Interpreter");
         stage.show();
 
-        // Event handlers
+
 
     }
 
@@ -142,13 +152,24 @@ public class InterpreterWindow {
 
     }
 
+    private void setupLockTable() {
+        TableColumn<Map.Entry<Integer, Integer>, Integer> indexCol = new TableColumn<>("Index");
+        indexCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getKey()));
+
+        TableColumn<Map.Entry<Integer, Integer>, Integer> valCol = new TableColumn<>("Value");
+        valCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue()));
+
+        lockTable.getColumns().addAll(indexCol, valCol);
+    }
+
     private void updateAll() {
 
             List<PrgState> prgs = ctrl.getRepository().getPrgList();
 
-            prgIds.setItems(FXCollections.observableArrayList(
-                    prgs.stream().map(PrgState::getId).toList()
-            ));
+            prgIds.getItems().clear();
+            // Ensure the list of IDs is cleanly mapped and updated
+            List<Integer> ids = prgs.stream().map(PrgState::getId).distinct().toList();
+            prgIds.setItems(FXCollections.observableArrayList(ids));
 
             if (prgs.isEmpty()) {
                 nrPrgStates.setText("0");
@@ -158,16 +179,20 @@ public class InterpreterWindow {
                 fileTable.getItems().clear();
                 exeStack.getItems().clear();
                 symTable.getItems().clear();
+                //LOCK
+                lockTable.getItems().clear();
+
                 oneStepBtn.setDisable(true);
                 return;
             }
             nrPrgStates.setText(String.valueOf(prgs.size()));
             oneStepBtn.setDisable(false);
+
+
             prgIds.getSelectionModel().select(0);
             updateSelectedPrg();
 
 
-            // Updated: Build heap entries using getKeys() and get()
 
             heapTable.setItems(FXCollections.observableArrayList(
                     prgs.get(0).getHeap().getContent().entrySet()
@@ -182,6 +207,12 @@ public class InterpreterWindow {
             fileTable.setItems(FXCollections.observableArrayList(
                     prgs.get(0).getFileTable().getKeys().stream().map(StringValue::getValue).toList()
             ));
+
+            //LOCK table for the first progr state
+            lockTable.setItems(FXCollections.observableArrayList(
+                    prgs.get(0).getLockTable().getContent().entrySet().stream().toList()
+            ));
+            //lockTable.refresh();
 
             if (prgIds.getSelectionModel().getSelectedItem() == null) {
                 prgIds.getSelectionModel().selectFirst();

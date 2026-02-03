@@ -9,6 +9,8 @@ import Model.ProgrState.Helper.Heap.IHeap;
 import Model.ProgrState.Helper.Heap.MyHeap;
 import Model.ProgrState.Helper.List.MyIList;
 import Model.ProgrState.Helper.List.MyList;
+import Model.ProgrState.Helper.Lock.ILockTable;
+import Model.ProgrState.Helper.Lock.LockTable;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.Helper.Stack.MyStack;
 import Model.Stmt.IStmt;
@@ -34,30 +36,23 @@ public class PrgState {
     private FileTable<StringValue, BufferedReader> fileTable;
     private IStmt originalProgram; //good to have cica
 
-    // wrong for forked threads, it must share the same filetable and heap
-//    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
-//        exeStack = stk;
-//        symTable = symtbl;
-//        out = ot;
-//        this.fileTable = new MyFileTable<>();
-//        this.heap = new MyHeap();
-//        originalProgram = orPrg;// DEEPCOPY recreate entire original program
-//        exeStack.push(orPrg);
-//        this.id = getNewId(); // Task 8: Assign unique ID
-//    }
+    // LOCK
+    private ILockTable lockTable;
 
     private static synchronized int getNewId() { // Task 8: Synchronized for thread safety
         return lastId++;
     }
 //for fork constructor
     public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot,
-                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap) {
+                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap , ILockTable lockTable) {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
         this.fileTable = fileTable;
         this.heap = heap;
-        this.id = getNewId(); // Task 8: Assign unique ID
+        this.id = getNewId();
+        //LOCK
+        this.lockTable = lockTable;
     }
 
 
@@ -68,6 +63,8 @@ public class PrgState {
         this.heap = new MyHeap();
         out= new MyList<IValue>();
         fileTable = new MyFileTable<>();
+        //LOCK
+        lockTable = new LockTable();
         try {
             ex.typecheck(new MyDictionary<String, IType>());  // verifica tipurile cu un env gol
         } catch (MyException e) {
@@ -116,6 +113,15 @@ public class PrgState {
         this.heap = heap;
     }
 
+    //LOCK
+    public ILockTable getLockTable() {
+        return lockTable;
+    }
+    public void setLockTable(ILockTable lockTable) {
+        this.lockTable = lockTable;
+    }
+
+
     public int getId() {
         return id;
     }
@@ -144,6 +150,7 @@ public class PrgState {
                 "\n Out: " + out.toString() +
                 "\n FileTable: " + fileTable.toString() +
                 "\n Heap: " + heap.toString()+
+                "\n LockTable: " + lockTable.toString() +
                 "\n----------------------------------------------- \n";
     }
 
