@@ -230,9 +230,9 @@ public class ExamplesProvider {
                                                                                     new CompStmt(new WriteHeapStmt("v2", new ArithExp('+', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(1)))), new UnlockStmt("x"))
                                                                                         )
                                                                                             ),
-                                                                                new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(),  new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(),
+                                                                                new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt( new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(),  new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(),
                                                                                         new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v1"))), new PrintStmt(new ReadHeapExp(new VarExp("v2")))
-                                                                                                    )))))))))))))))))));
+                                                                                                    ))))))))))))))))))));
         examples.add(exLockExamCorrected);
 
         return examples;

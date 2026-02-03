@@ -185,7 +185,7 @@ public class InterpreterWindow {
                 oneStepBtn.setDisable(true);
                 return;
             }
-            nrPrgStates.setText(String.valueOf(prgs.size()));
+            nrPrgStates.setText(String.valueOf(prgs.stream().distinct().count()));
             oneStepBtn.setDisable(false);
 
 
