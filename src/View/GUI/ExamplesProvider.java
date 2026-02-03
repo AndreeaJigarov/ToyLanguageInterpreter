@@ -209,7 +209,7 @@ public class ExamplesProvider {
                 new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
                         new CompStmt(new VarDeclStmt("v3", new RefType(new IntType())),
                                 new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(2))),
-                                        new CompStmt(new NewStmt("v2", new ValueExp(new IntValue(2))),
+                                        new CompStmt(new NewStmt("v2", new ValueExp(new IntValue(3))),
                                                 new CompStmt(new NewStmt("v3", new ValueExp(new IntValue(4))),
                                                         new CompStmt(new VarDeclStmt("cnt", new IntType()),
                                                                 new CompStmt(new NewBarrierStmt("cnt", new ReadHeapExp(new VarExp("v2"))),

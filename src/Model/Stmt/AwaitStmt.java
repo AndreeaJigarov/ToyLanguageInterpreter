@@ -54,7 +54,8 @@ public class AwaitStmt implements IStmt {
                 // Push back onto the stack to wait for the next execution cycle
                 state.getExeStack().push(this);
             } else {
-
+                // Dacă NL == N, nu facem nimic (pop-ul este deja făcut în ProgramState.oneStep),
+                // deci thread-ul trece de barieră.
             }
         } finally {
             lock.unlock();
