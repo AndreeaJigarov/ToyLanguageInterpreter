@@ -31,7 +31,7 @@ public class Interpreter {
                             new AssignStmt("v", new ValueExp(new IntValue(2))),
                             new PrintStmt(new VarExp("v"))
                     )
-            ); 
+            );
             PrgState prg1 = new PrgState(ex1);
             Repository repository1 = new Repository(prg1, "saveFile1.txt");
             Controller controller1 = new Controller(repository1);

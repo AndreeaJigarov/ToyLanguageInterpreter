@@ -2,6 +2,7 @@ package View.GUI;
 
 import Controller.Controller;
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Semaphore.SemaphoreEntry;
 import Model.ProgrState.PrgState;
 import Model.Stmt.IStmt;
 import Model.Value.IValue;
@@ -31,6 +32,9 @@ public class InterpreterWindow {
     private final TableView<Map.Entry<Integer, IValue>> heapTable = new TableView<>();
     private final TableView<Map.Entry<String, IValue>> symTable = new TableView<>();
 
+    //SEMAPHORE
+    private final TableView<Map.Entry<Integer, SemaphoreEntry>> semaphoreTable = new TableView<>();
+
     private final TextField nrPrgStates = new TextField();
     private final Button oneStepBtn = new Button("Run one step");
 
@@ -41,6 +45,8 @@ public class InterpreterWindow {
         //setup the table
         setupHeapTable();
         setupSymTable();
+        //SEMAPHORE
+        setupSemaphoreTable();
 
         //titled panes
         TitledPane prgPane = new TitledPane("PrgState IDs", prgIds);
@@ -49,9 +55,11 @@ public class InterpreterWindow {
         TitledPane symPane = new TitledPane("SymTable", symTable);
         TitledPane outPane = new TitledPane("Out", out);
         TitledPane filePane = new TitledPane("FileTable", fileTable);
+        //SEMAPHORE
+        TitledPane semaphorePane = new TitledPane("SemaphoreTable", semaphoreTable); //
 
         VBox left = new VBox(10, prgPane, stackPane);
-        VBox mid  = new VBox(10, heapPane, symPane);
+        VBox mid  = new VBox(10, heapPane, symPane, semaphorePane); // ADDED SEMAPHORE PANE
         VBox right = new VBox(10, outPane, filePane);
 
         VBox.setVgrow(prgIds, Priority.ALWAYS);
@@ -142,6 +150,20 @@ public class InterpreterWindow {
 
     }
 
+    //SEMAPHORE
+    private void setupSemaphoreTable() {
+        TableColumn<Map.Entry<Integer, SemaphoreEntry>, Integer> indexCol = new TableColumn<>("Index");
+        indexCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getKey()));
+
+        TableColumn<Map.Entry<Integer, SemaphoreEntry>, Integer> valueCol = new TableColumn<>("Value");
+        valueCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue().getCapacity()));
+
+        TableColumn<Map.Entry<Integer, SemaphoreEntry>, List<Integer>> listCol = new TableColumn<>("List");
+        listCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue().getThreadIds()));
+
+        semaphoreTable.getColumns().addAll(indexCol, valueCol, listCol);
+    }
+
     private void updateAll() {
 
             List<PrgState> prgs = ctrl.getRepository().getPrgList();
@@ -159,6 +181,8 @@ public class InterpreterWindow {
                 exeStack.getItems().clear();
                 symTable.getItems().clear();
                 oneStepBtn.setDisable(true);
+                //SEMAPHORE
+                semaphoreTable.getItems().clear();
                 return;
             }
             nrPrgStates.setText(String.valueOf(prgs.size()));
@@ -167,7 +191,7 @@ public class InterpreterWindow {
             updateSelectedPrg();
 
 
-            // Updated: Build heap entries using getKeys() and get()
+
 
             heapTable.setItems(FXCollections.observableArrayList(
                     prgs.get(0).getHeap().getContent().entrySet()
@@ -183,9 +207,19 @@ public class InterpreterWindow {
                     prgs.get(0).getFileTable().getKeys().stream().map(StringValue::getValue).toList()
             ));
 
+            //SEMAPHORE
+            semaphoreTable.setItems(FXCollections.observableArrayList(
+                    prgs.get(0).getSemaphoreTable().getContent().entrySet().stream().toList()
+            ));
+            //semaphoreTable.refresh();
+
             if (prgIds.getSelectionModel().getSelectedItem() == null) {
                 prgIds.getSelectionModel().selectFirst();
             }
+
+
+
+
             updateSelectedPrg();
 
     }

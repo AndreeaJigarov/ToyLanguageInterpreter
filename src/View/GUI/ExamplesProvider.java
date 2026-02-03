@@ -204,6 +204,22 @@ public class ExamplesProvider {
         );
         examples.add(exFork);
 
+        // exSemaphore
+        IStmt exSem = new CompStmt(
+                new VarDeclStmt("v1", new RefType(new IntType())),
+                new CompStmt(new VarDeclStmt("cnt", new IntType()),
+                        new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(1))),
+                                new CompStmt(new CreateSemaphoreStmt("cnt", new ReadHeapExp(new VarExp("v1"))),
+                                        new CompStmt(
+                                                new ForkStmt(new CompStmt(new AcquireStmt("cnt"), new CompStmt(new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))), new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v1"))), new ReleaseStmt("cnt"))))),
+                                                new CompStmt(
+                                                        new ForkStmt(new CompStmt(new AcquireStmt("cnt"), new CompStmt(new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))), new CompStmt(new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(2)))), new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v1"))), new ReleaseStmt("cnt")))))),
+                                                        new CompStmt(new AcquireStmt("cnt"), new CompStmt(new PrintStmt(new ArithExp('-', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(1)))), new ReleaseStmt("cnt")))
+                                                )
+                                        ))))
+        );
+        examples.add(exSem);
+
         return examples;
     }
 }
