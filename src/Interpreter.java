@@ -36,7 +36,7 @@ public class Interpreter {
             Repository repository1 = new Repository(prg1, "saveFile1.txt");
             Controller controller1 = new Controller(repository1);
 
-            
+
             IStmt ex2 = new CompStmt(
                     new VarDeclStmt("a", new IntType()),
                     new CompStmt(

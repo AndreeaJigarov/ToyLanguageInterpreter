@@ -204,6 +204,30 @@ public class ExamplesProvider {
         );
         examples.add(exFork);
 
+        IStmt exBarrier =
+        new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
+                new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
+                        new CompStmt(new VarDeclStmt("v3", new RefType(new IntType())),
+                                new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(2))),
+                                        new CompStmt(new NewStmt("v2", new ValueExp(new IntValue(3))),
+                                                new CompStmt(new NewStmt("v3", new ValueExp(new IntValue(4))),
+                                                        new CompStmt(new VarDeclStmt("cnt", new IntType()),
+                                                                new CompStmt(new NewBarrierStmt("cnt", new ReadHeapExp(new VarExp("v2"))),
+                                                                        new CompStmt(
+                                                                                new ForkStmt(new CompStmt(new AwaitStmt("cnt"),
+                                                                                        new CompStmt(new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),
+                                                                                                new PrintStmt(new ReadHeapExp(new VarExp("v1")))))),
+                                                                                new CompStmt(
+                                                                                        new ForkStmt(new CompStmt(new AwaitStmt("cnt"),
+                                                                                                new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                                                                                                        new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                                                                                                                new PrintStmt(new ReadHeapExp(new VarExp("v2"))))))),
+                                                                                        new CompStmt(new AwaitStmt("cnt"), new PrintStmt(new ReadHeapExp(new VarExp("v3"))))
+                                                                                ))))))))));
+
+
+        examples.add(exBarrier);
+
         return examples;
     }
 }

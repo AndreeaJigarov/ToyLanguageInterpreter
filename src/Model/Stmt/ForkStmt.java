@@ -19,8 +19,8 @@ public class ForkStmt implements IStmt {
     public PrgState execute(PrgState state) throws MyException {
         MyIStack<IStmt> newStack = new MyStack<IStmt>();
         newStack.push(stmt);
-        MyIDictionary<String, IValue> newSymTable = state.getSymTable().clone(); // deep copy
-        return new PrgState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap());
+        MyIDictionary<String, IValue> newSymTable = state.getSymTable().clone(); // deep copy             // BARRIER
+        return new PrgState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap(), state.getBarrierTable());
     }
 
     @Override
