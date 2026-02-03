@@ -20,23 +20,13 @@ public class Controller  implements IController {
     IRepository repository;
     private ExecutorService executor; // Task 12
 
-    // -- removeeeeee task 7
-//    @Override
-//    public PrgState oneStep(PrgState prgState) throws MyException {
-//        MyIStack<IStmt> stk = prgState.getExeStack();
-//        if(stk.isEmpty())throw new MyException("prgstate stack is empty");
-//        IStmt crtStmt = stk.pop();
-//
-//        crtStmt.execute(prgState);  // Execute modifies prgState in place
-//        return prgState;  // Return the updated state
-//    }
 
     // Task 10
     public List<PrgState> removeCompletedPrg(List<PrgState> inPrgList) {
         return inPrgList.stream().filter(PrgState::isNotCompleted).collect(Collectors.toList());
     }
 
-    // Task 14: New method
+
     public void oneStepForAllPrg(List<PrgState> prgList) throws MyException {
         // Log before execution
         prgList.forEach(prg -> {
@@ -88,33 +78,6 @@ public class Controller  implements IController {
         this.repository = repository;
     }
 
-    //public void allStep() throws MyException {
-//        PrgState prg = repository.getCrtPrg();
-//        System.out.println("Initial state:");
-//        System.out.println(prg);
-//        repository.logPrgStateExec(prg); //added
-//
-//
-//        while(!prg.getExeStack().isEmpty()){
-//            prg = oneStep(prg);
-//            System.out.println("After one step:");
-//            System.out.println(prg);
-//            repository.logPrgStateExec(prg);
-//            //added
-//            var safeAddresses = getAllAddresses(
-//                    prg.getSymTable().getValues(),
-//                    prg.getHeap().getContent()
-//            );
-//
-//            prg.getHeap().setContent(
-//                    prg.getHeap().getContent().entrySet().stream()
-//                            .filter(e -> safeAddresses.contains(e.getKey()))
-//                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-//            );
-//
-//            repository.logPrgStateExec(prg);
-//        }
-//    }
 
     void conservativeGarbageCollector(List<PrgState> prgList) {
 
@@ -155,7 +118,7 @@ public class Controller  implements IController {
     }
 
 
-    // Task 16: Updated garbage collector (handles multiple symTables)
+
     private Map<Integer, IValue> safeGarbageCollector(List<Integer> addresses, Map<Integer, IValue> heap) {
         return heap.entrySet().stream()
                 .filter(e -> addresses.contains(e.getKey()))
@@ -195,7 +158,7 @@ public class Controller  implements IController {
 //
 //
 
-    // Task 16: Updated to handle list of symTable values
+
     public static List<Integer> getAllAddresses(List<Collection<IValue>> symTablesValues, Map<Integer, IValue> heap) {
         List<Integer> addresses = new ArrayList<>();
 
