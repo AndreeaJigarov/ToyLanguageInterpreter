@@ -2,6 +2,7 @@ package View.GUI;
 
 import Controller.Controller;
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Barrier.BarrierEntry;
 import Model.ProgrState.PrgState;
 import Model.Stmt.IStmt;
 import Model.Value.IValue;
@@ -31,8 +32,9 @@ public class InterpreterWindow {
     private final TableView<Map.Entry<Integer, IValue>> heapTable = new TableView<>();
     private final TableView<Map.Entry<String, IValue>> symTable = new TableView<>();
 
-    //BARRIER
-    private final TableView<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>> barrierTable = new TableView<>();
+    // BARRIER
+    private final TableView<Map.Entry<Integer, BarrierEntry>> barrierTable = new TableView<>();
+
 
     private final TextField nrPrgStates = new TextField();
     private final Button oneStepBtn = new Button("Run one step");
@@ -152,20 +154,18 @@ public class InterpreterWindow {
 
 
     private void setupBarrierTable() {
-        // Column 1: Index (The key in the Barrier Table map)
-        TableColumn<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>, Integer> indexCol = new TableColumn<>("Index");
+        TableColumn<Map.Entry<Integer, BarrierEntry>, Integer> indexCol = new TableColumn<>("Index");
         indexCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getKey()));
 
-        // Column 2: Value (The capacity N1)
-        TableColumn<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>, Integer> valueCol = new TableColumn<>("Value");
-        valueCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue().getKey()));
+        TableColumn<Map.Entry<Integer, BarrierEntry>, Integer> thresholdCol = new TableColumn<>("Threshold");
+        thresholdCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue().getThreshold()));
 
-        // Column 3: List (The thread IDs)
-        TableColumn<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>, String> listCol = new TableColumn<>("List");
-        listCol.setCellValueFactory(p -> new javafx.beans.property.SimpleStringProperty(p.getValue().getValue().getValue().toString()));
+        TableColumn<Map.Entry<Integer, BarrierEntry>, List<Integer>> listCol = new TableColumn<>("Waiting Threads");
+        listCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue().getThreadIds()));
 
-        barrierTable.getColumns().addAll(indexCol, valueCol, listCol);
+        barrierTable.getColumns().addAll(indexCol, thresholdCol, listCol);
     }
+
 
     private void updateAll() {
 
@@ -211,8 +211,9 @@ public class InterpreterWindow {
             ));
 
             barrierTable.setItems(FXCollections.observableArrayList(
-                    prgs.get(0).getBarrierTable().getContent().entrySet()
+                    prgs.get(0).getBarrierTable().getContent().entrySet().stream().toList()
             ));
+            barrierTable.refresh();
 
             if (prgIds.getSelectionModel().getSelectedItem() == null) {
                 prgIds.getSelectionModel().selectFirst();

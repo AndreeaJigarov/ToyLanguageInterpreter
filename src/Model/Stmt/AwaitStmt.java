@@ -2,13 +2,15 @@ package Model.Stmt;
 
 import Exceptions.MyException;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
+import Model.ProgrState.Helper.Barrier.IBarrierTable;
+import Model.ProgrState.Helper.Barrier.BarrierEntry;
 import Model.ProgrState.PrgState;
 import Model.Type.IType;
 import Model.Type.IntType;
 import Model.Value.IValue;
 import Model.Value.IntValue;
-import javafx.util.Pair;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class AwaitStmt implements IStmt {
     private final String var;
@@ -19,42 +21,54 @@ public class AwaitStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        // Look up variable in SymTable
-        if (!state.getSymTable().containsKey(var)) {
-            throw new MyException("Await Error: Variable " + var + " not found in SymTable.");
-        }
+        IBarrierTable barrierTable = state.getBarrierTable();
+        ReentrantLock lock = barrierTable.getLock();
 
-        IValue val = state.getSymTable().lookup(var);
-        int foundIndex = ((IntValue) val).getValue();
+        lock.lock();
+        try {
+            // 1. Check if variable exists and is an integer
+            if (!state.getSymTable().containsKey(var))
+                throw new MyException("Await: Variable " + var + " not found");
 
-        // Perform atomic check-and-update on the shared BarrierTable
-        synchronized (state.getBarrierTable()) {
-            if (!state.getBarrierTable().contains(foundIndex)) {
-                throw new MyException("Await Error: Index " + foundIndex + " not in Barrier Table.");
-            }
+            IValue val = state.getSymTable().lookup(var);
+            if (!val.getType().equals(new IntType()))
+                throw new MyException("Await: Variable " + var + " is not an integer");
 
-            Pair<Integer, List<Integer>> entry = state.getBarrierTable().get(foundIndex);
-            int N1 = entry.getKey(); // Capacity
-            List<Integer> L1 = entry.getValue(); // List of threads
-            int NL = L1.size();
+            int foundIndex = ((IntValue) val).getValue();
 
+            // 2. Verify the index exists in the Barrier Table
+            if (!barrierTable.contains(foundIndex))
+                throw new MyException("Await: Barrier index not found in table");
+
+            BarrierEntry entry = barrierTable.get(foundIndex);
+            int N1 = entry.getThreshold();
+            List<Integer> list1 = entry.getThreadIds();
+            int NL = list1.size();
+
+            // 3. Blocking Logic
             if (N1 > NL) {
-                if (!L1.contains(state.getId())) {
-                    L1.add(state.getId());
+                // If the current thread isn't already waiting, add it
+                if (!list1.contains(state.getId())) {
+                    list1.add(state.getId());
                 }
-                // Requirement: push back await(var) on the ExeStack
+                // Push back onto the stack to wait for the next execution cycle
                 state.getExeStack().push(this);
+            } else {
+                // Threshold met! Do nothing (effectively popping the statement)
+                // This allows the thread to proceed to the next instruction.
             }
+        } finally {
+            lock.unlock();
         }
-        // If N1 == NL, the statement is simply popped, and execution continues.
         return null;
     }
 
     @Override
     public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
-        if (!typeEnv.lookup(var).equals(new IntType()))
-            throw new MyException("Await Typecheck: Variable " + var + " must be an integer.");
-        return typeEnv;
+        if (typeEnv.lookup(var).equals(new IntType()))
+            return typeEnv;
+        else
+            throw new MyException("Await: Variable " + var + " must be int");
     }
 
     @Override

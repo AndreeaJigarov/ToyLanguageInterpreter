@@ -1,66 +1,65 @@
 package Model.ProgrState.Helper.Barrier;
 
 import Exceptions.MyException;
-import javafx.util.Pair;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class BarrierTable implements IBarrierTable {
-    private Map<Integer, Pair<Integer, List<Integer>>> table;
+    private final Map<Integer, BarrierEntry> table = new HashMap<>();
     private int freeLocation = 0;
-
-    public BarrierTable() {
-        this.table = new HashMap<>();
-    }
+    private final ReentrantLock lock = new ReentrantLock();
 
     @Override
-    public synchronized int add(Pair<Integer, List<Integer>> value) {
-        freeLocation++;
-        table.put(freeLocation, value);
-        return freeLocation;
-    }
-
-    @Override
-    public synchronized void update(int address, Pair<Integer, List<Integer>> value) throws MyException {
-        if (table.containsKey(address)) {
-            table.put(address, value);
-        } else {
-            throw new MyException("Barrier address " + address + " is not in the table.");
+    public int allocate(BarrierEntry entry) {
+        lock.lock();
+        try {
+            freeLocation++;
+            table.put(freeLocation, entry);
+            return freeLocation;
+        } finally {
+            lock.unlock();
         }
     }
 
     @Override
-    public synchronized Pair<Integer, List<Integer>> get(int address) throws MyException {
-        if (table.containsKey(address)) {
-            return table.get(address);
-        } else {
-            throw new MyException("Barrier address " + address + " is not in the table.");
+    public BarrierEntry get(int index) throws MyException {
+        lock.lock();
+        try {
+            if (!table.containsKey(index))
+                throw new MyException("Barrier index " + index + " not found!");
+            return table.get(index);
+        } finally {
+            lock.unlock();
         }
     }
 
     @Override
-    public synchronized boolean contains(int address) {
-        return table.containsKey(address);
-    }
-
-    @Override
-    public synchronized Map<Integer, Pair<Integer, List<Integer>>> getContent() {
-        return table;
-    }
-
-    @Override
-    public synchronized void setContent(Map<Integer, Pair<Integer, List<Integer>>> newContent) {
-        this.table = newContent;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("BarrierTable:\n");
-        for (int key : table.keySet()) {
-            Pair<Integer, List<Integer>> entry = table.get(key);
-            sb.append(key).append(" -> (").append(entry.getKey()).append(", ").append(entry.getValue()).append(")\n");
+    public void update(int index, BarrierEntry entry) throws MyException {
+        lock.lock();
+        try {
+            table.put(index, entry);
+        } finally {
+            lock.unlock();
         }
-        return sb.toString();
+    }
+
+    @Override
+    public boolean contains(int index) {
+        lock.lock();
+        try { return table.containsKey(index); }
+        finally { lock.unlock(); }
+    }
+
+    @Override
+    public Map<Integer, BarrierEntry> getContent() {
+        lock.lock();
+        try { return new HashMap<>(table); }
+        finally { lock.unlock(); }
+    }
+
+    @Override
+    public ReentrantLock getLock() {
+        return this.lock;
     }
 }
