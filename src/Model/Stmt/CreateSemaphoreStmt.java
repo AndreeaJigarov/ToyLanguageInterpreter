@@ -28,17 +28,17 @@ public class CreateSemaphoreStmt implements IStmt {
 
         lock.lock();
         try {
-            // Evaluate expression to get the capacity (N1) [cite: 322]
+            // Evaluate expression to get the capacity (N1)
             IValue val = exp.eval(state.getSymTable(), state.getHeap());
             if (!val.getType().equals(new IntType()))
                 throw new MyException("CreateSemaphore: Expression result is not an integer");
 
             int number1 = ((IntValue) val).getValue();
 
-            // Create new entry (number1, empty list) and add to table [cite: 324]
+            // Create new entry (number1, empty list) and add to table
             int newAddr = semTable.allocate(new SemaphoreEntry(number1));
 
-            // Update SymTable with the new address [cite: 325, 326]
+            // Update SymTable with the new address
             if (state.getSymTable().containsKey(var) && state.getSymTable().lookup(var).getType().equals(new IntType())) {
                 state.getSymTable().update(var, new IntValue(newAddr));
             } else {
