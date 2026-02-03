@@ -204,6 +204,72 @@ public class ExamplesProvider {
         );
         examples.add(exFork);
 
+
+        // Toy Semaphore Example from Exam
+        //Ref int v1; int cnt;
+        //new(v1,2);newSemaphore(cnt,rH(v1),1);
+        //fork(acquire(cnt);wh(v1,rh(v1)*10));print(rh(v1));release(cnt));
+        //fork(acquire(cnt);wh(v1,rh(v1)*10));wh(v1,rh(v1)*2));print(rh(v1));release(cnt
+        //));
+        //acquire(cnt);
+        //print(rh(v1)-1);
+        //release(cnt)
+        IStmt toySemEx = new CompStmt(
+                new VarDeclStmt("v1", new RefType(new IntType())),
+                new CompStmt(
+                        new VarDeclStmt("cnt", new IntType()),
+                        new CompStmt(
+                                // new(v1,2);
+                                new NewStmt("v1", new ValueExp(new IntValue(2))),
+                                new CompStmt(
+                                        // newSemaphore(cnt, rH(v1), 1); -> rH(v1) este 2, deci capacitate initiala 2-1=1
+                                        new NewSemaphoreStmt("cnt", new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(1))),
+                                        new CompStmt(
+                                                // Primul Fork: fork(acquire(cnt); wh(v1,rh(v1)*10); print(rh(v1)); release(cnt));
+                                                new ForkStmt(
+                                                        new CompStmt(
+                                                                new AcquireStmt("cnt"),
+                                                                new CompStmt(
+                                                                        new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10))) ),
+                                                                        new CompStmt(
+                                                                                new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                                                                                new ReleaseStmt("cnt")
+                                                                        )
+                                                                )
+                                                        )
+                                                ),
+                                                new CompStmt(
+                                                        // Al doilea Fork: fork(acquire(cnt); wh(v1,rh(v1)*10); print(rh(v1)); release(cnt));
+                                                        new ForkStmt(
+                                                                new CompStmt(
+                                                                        new AcquireStmt("cnt"),
+                                                                        new CompStmt(
+                                                                                // only a single multiply-by-10 here (remove the extra *2 write)
+                                                                                new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),
+                                                                                new CompStmt(
+                                                                                        new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                                                                                        new ReleaseStmt("cnt")
+                                                                                )
+                                                                        )
+                                                                )
+                                                        ),
+                                                        new CompStmt(
+                                                                // Main Thread: acquire(cnt); print(rh(v1)-1); release(cnt);
+                                                                new AcquireStmt("cnt"),
+                                                                new CompStmt(
+                                                                        new PrintStmt(new ArithExp('-', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(1)))),
+                                                                        new ReleaseStmt("cnt")
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+        examples.add(toySemEx);
+
+
         return examples;
     }
 }

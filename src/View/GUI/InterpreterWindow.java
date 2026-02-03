@@ -2,6 +2,7 @@ package View.GUI;
 
 import Controller.Controller;
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Semaphore.SemaphoreTriple;
 import Model.ProgrState.PrgState;
 import Model.Stmt.IStmt;
 import Model.Value.IValue;
@@ -31,6 +32,8 @@ public class InterpreterWindow {
     private final TableView<Map.Entry<Integer, IValue>> heapTable = new TableView<>();
     private final TableView<Map.Entry<String, IValue>> symTable = new TableView<>();
 
+    private final TableView<Map.Entry<Integer, SemaphoreTriple>> semaphoreTable = new TableView<>();
+
     private final TextField nrPrgStates = new TextField();
     private final Button oneStepBtn = new Button("Run one step");
 
@@ -41,6 +44,7 @@ public class InterpreterWindow {
         //setup the table
         setupHeapTable();
         setupSymTable();
+        setupSemaphoreTable();
 
         //titled panes
         TitledPane prgPane = new TitledPane("PrgState IDs", prgIds);
@@ -50,8 +54,11 @@ public class InterpreterWindow {
         TitledPane outPane = new TitledPane("Out", out);
         TitledPane filePane = new TitledPane("FileTable", fileTable);
 
+
+        TitledPane semaphorePane = new TitledPane("Semaphore", semaphoreTable);
+
         VBox left = new VBox(10, prgPane, stackPane);
-        VBox mid  = new VBox(10, heapPane, symPane);
+        VBox mid  = new VBox(10, heapPane, symPane, semaphorePane);
         VBox right = new VBox(10, outPane, filePane);
 
         VBox.setVgrow(prgIds, Priority.ALWAYS);
@@ -60,6 +67,8 @@ public class InterpreterWindow {
         VBox.setVgrow(symTable, Priority.ALWAYS);
         VBox.setVgrow(out, Priority.ALWAYS);
         VBox.setVgrow(fileTable, Priority.ALWAYS);
+
+        VBox.setVgrow(semaphoreTable, Priority.ALWAYS);
 
 
         // BOTTOM CONTROLS
@@ -142,6 +151,22 @@ public class InterpreterWindow {
 
     }
 
+    private void setupSemaphoreTable() {
+        TableColumn<Map.Entry<Integer, SemaphoreTriple>, Integer> indexCol = new TableColumn<>("Index");
+        indexCol.setCellValueFactory(p -> new ReadOnlyObjectWrapper<>(p.getValue().getKey()));
+
+        TableColumn<Map.Entry<Integer, SemaphoreTriple>, Integer> val1Col = new TableColumn<>("N1");
+        val1Col.setCellValueFactory(p -> new ReadOnlyObjectWrapper<>(p.getValue().getValue().getN1()));
+
+        TableColumn<Map.Entry<Integer, SemaphoreTriple>, Integer> val2Col = new TableColumn<>("N2");
+        val2Col.setCellValueFactory(p -> new ReadOnlyObjectWrapper<>(p.getValue().getValue().getN2()));
+
+        TableColumn<Map.Entry<Integer, SemaphoreTriple>, String> listCol = new TableColumn<>("Threads List");
+        listCol.setCellValueFactory(p -> new ReadOnlyObjectWrapper<>(p.getValue().getValue().getThreadIds().toString()));
+
+        semaphoreTable.getColumns().addAll(indexCol, val1Col, val2Col, listCol);
+    }
+
     private void updateAll() {
 
             List<PrgState> prgs = ctrl.getRepository().getPrgList();
@@ -158,6 +183,7 @@ public class InterpreterWindow {
                 fileTable.getItems().clear();
                 exeStack.getItems().clear();
                 symTable.getItems().clear();
+                semaphoreTable.getItems().clear();
                 oneStepBtn.setDisable(true);
                 return;
             }
@@ -182,6 +208,11 @@ public class InterpreterWindow {
             fileTable.setItems(FXCollections.observableArrayList(
                     prgs.get(0).getFileTable().getKeys().stream().map(StringValue::getValue).toList()
             ));
+
+            semaphoreTable.setItems(FXCollections.observableArrayList(
+                    prgs.get(0).getSemaphoreTable().getContent().entrySet().stream().toList()
+            ));
+            semaphoreTable.refresh();
 
             if (prgIds.getSelectionModel().getSelectedItem() == null) {
                 prgIds.getSelectionModel().selectFirst();
