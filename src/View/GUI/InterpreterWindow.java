@@ -211,7 +211,7 @@ public class InterpreterWindow {
             semaphoreTable.setItems(FXCollections.observableArrayList(
                     prgs.get(0).getSemaphoreTable().getContent().entrySet().stream().toList()
             ));
-            //semaphoreTable.refresh();
+            semaphoreTable.refresh();
 
             if (prgIds.getSelectionModel().getSelectedItem() == null) {
                 prgIds.getSelectionModel().selectFirst();

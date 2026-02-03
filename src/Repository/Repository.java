@@ -101,6 +101,9 @@ public class Repository implements IRepository {
             logFile.println("Heap:");
             logFile.println(state.getHeap().toString());
 
+            logFile.println("CountSemaphore:");
+            logFile.println(state.getSemaphoreTable().toString());
+
             logFile.println();
         } catch (IOException e) {
             throw new MyException("Logging failed: " + e.getMessage());

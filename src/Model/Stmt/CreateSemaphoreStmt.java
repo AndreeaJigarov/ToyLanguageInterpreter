@@ -55,7 +55,7 @@ public class CreateSemaphoreStmt implements IStmt {
         IType typeVar = typeEnv.lookup(var);
         IType typeExp = exp.typecheck(typeEnv);
         if (typeVar.equals(new IntType()) && typeExp.equals(new IntType())) return typeEnv;
-        else throw new MyException("CreateSemaphore: var and exp must be of type int [cite: 359]");
+        else throw new MyException("CreateSemaphore: var and exp must be of type int ");
     }
 
     @Override

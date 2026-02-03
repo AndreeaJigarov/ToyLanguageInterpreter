@@ -62,4 +62,9 @@ public class SemaphoreTable implements ISemaphoreTable {
     public ReentrantLock getLock() {
         return this.lock; // This allows statements to synchronize on the same lock
     }
+
+    @Override
+    public String toString() {
+        return "SemaphoreTable [freeLocation=" + freeLocation + ", table=" + table.toString() + "]";
+    }
 }

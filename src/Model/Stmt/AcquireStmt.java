@@ -41,6 +41,7 @@ public class AcquireStmt implements IStmt {
             if (N1 > NL) {
                 if (!list1.contains(state.getId())) {
                     list1.add(state.getId());
+                    semTable.update(foundIndex, entry);
                 }
             } else {
                 state.getExeStack().push(this);

@@ -21,6 +21,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -45,6 +47,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -69,6 +73,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -93,6 +99,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -117,6 +125,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -141,6 +151,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -165,6 +177,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -189,6 +203,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -213,6 +229,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -237,6 +255,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -261,6 +281,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -284,6 +306,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -307,6 +331,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -330,6 +356,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -353,6 +381,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -375,6 +405,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -397,28 +429,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
-
->>> ProgramState ID: 0
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -441,6 +453,32 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+wH(v1,rH(v1) * 2);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -459,6 +497,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -473,6 +513,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -491,6 +533,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -505,6 +549,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -523,6 +569,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -537,6 +585,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -555,6 +605,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -569,6 +621,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -587,6 +641,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -601,6 +657,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -619,6 +677,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -633,6 +693,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -646,6 +708,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -659,6 +723,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -674,6 +740,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -687,6 +755,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -700,6 +770,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -715,6 +787,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -728,6 +802,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -741,6 +817,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -756,6 +834,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -769,6 +849,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -782,6 +864,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -797,6 +881,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -810,6 +896,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -823,6 +911,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -838,6 +928,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -851,6 +943,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -864,6 +958,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -879,6 +975,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -892,6 +990,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -905,6 +1005,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -920,6 +1022,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -933,6 +1037,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -946,6 +1052,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -961,6 +1069,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -974,6 +1084,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -986,6 +1098,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1001,6 +1115,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1014,6 +1130,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1026,6 +1144,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1041,6 +1161,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1054,6 +1176,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1066,6 +1190,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1081,6 +1207,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1094,6 +1222,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1106,6 +1236,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1121,6 +1253,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1134,6 +1268,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1146,6 +1282,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1161,6 +1299,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1174,6 +1314,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1186,6 +1328,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1201,6 +1345,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1214,6 +1360,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1226,6 +1374,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1241,6 +1391,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1254,6 +1406,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1266,6 +1420,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1281,6 +1437,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1295,6 +1453,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1307,6 +1467,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1323,6 +1485,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1337,6 +1501,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1349,6 +1515,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1365,6 +1533,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1379,6 +1549,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1391,6 +1563,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1407,6 +1581,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1421,6 +1597,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1433,6 +1611,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1449,6 +1629,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1463,6 +1645,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -1474,6 +1658,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1489,6 +1675,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1503,6 +1691,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1518,6 +1708,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1532,6 +1724,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1547,6 +1741,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1561,6 +1757,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1576,6 +1774,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1590,6 +1790,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1605,6 +1807,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1619,6 +1823,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1634,6 +1840,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1648,6 +1856,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1662,6 +1872,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1676,6 +1888,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1690,6 +1904,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1704,6 +1920,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1718,6 +1936,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1732,6 +1952,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1746,6 +1968,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1760,6 +1984,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1774,6 +2000,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1788,6 +2016,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1802,6 +2032,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1816,6 +2048,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1829,6 +2063,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1843,6 +2079,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1856,6 +2094,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1870,6 +2110,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1883,6 +2125,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1897,6 +2141,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1910,6 +2156,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1924,6 +2172,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1937,6 +2187,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1951,6 +2203,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1964,6 +2218,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -1979,6 +2235,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -1992,6 +2250,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2007,6 +2267,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -2020,6 +2282,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2035,6 +2299,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -2048,6 +2314,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2063,6 +2331,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -2075,6 +2345,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2090,6 +2362,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2104,6 +2378,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2118,6 +2394,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2132,6 +2410,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2146,6 +2426,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2160,6 +2442,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2174,6 +2458,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -2187,2196 +2473,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-Ref(int) v1;
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-Ref(int) v1
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-Ref(int) v1
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1)
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1)
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt))
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt))
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt))
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10)
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10)
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10)
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1)
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1)
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-199
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-199
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-199
-FileTable:
-Heap:
-{1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4401,6 +2499,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4425,6 +2525,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4449,6 +2551,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4473,6 +2577,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4497,6 +2603,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4521,6 +2629,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4545,6 +2655,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4569,6 +2681,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4593,6 +2707,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4617,6 +2733,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4641,6 +2759,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4664,6 +2784,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4687,6 +2809,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4710,6 +2834,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4733,6 +2859,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4755,6 +2883,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4777,28 +2907,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
-
->>> ProgramState ID: 0
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4821,6 +2931,32 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+wH(v1,rH(v1) * 2);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4839,6 +2975,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -4853,6 +2991,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4871,6 +3011,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -4885,6 +3027,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4903,6 +3047,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -4917,6 +3063,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4935,6 +3083,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -4949,6 +3099,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4967,6 +3119,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -4981,6 +3135,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -4999,6 +3155,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5013,6 +3171,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5026,6 +3186,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5039,6 +3201,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5054,6 +3218,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5067,6 +3233,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5080,6 +3248,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5095,6 +3265,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5108,6 +3280,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5121,6 +3295,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5136,6 +3312,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5149,6 +3327,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5162,6 +3342,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5177,6 +3359,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5190,6 +3374,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5203,6 +3389,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5218,6 +3406,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5231,6 +3421,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5244,6 +3436,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5259,6 +3453,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5272,6 +3468,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5285,6 +3483,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5300,6 +3500,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5313,6 +3515,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5326,6 +3530,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5341,6 +3547,8 @@ Out:
 FileTable:
 Heap:
 {1=1}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5354,6 +3562,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5366,6 +3576,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5381,6 +3593,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5394,6 +3608,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5406,6 +3622,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5421,6 +3639,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5434,6 +3654,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5446,6 +3668,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5461,6 +3685,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5474,6 +3700,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5486,6 +3714,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5501,6 +3731,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5514,6 +3746,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5526,6 +3760,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5541,6 +3777,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5554,6 +3792,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5566,6 +3806,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5581,6 +3823,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5594,6 +3838,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5606,6 +3852,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5621,6 +3869,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5634,6 +3884,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5646,6 +3898,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5661,6 +3915,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5675,6 +3931,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5687,6 +3945,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5703,6 +3963,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5717,6 +3979,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5729,6 +3993,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5745,6 +4011,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5759,6 +4027,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5771,6 +4041,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5787,6 +4059,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5801,6 +4075,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5813,6 +4089,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5829,6 +4107,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5843,6 +4123,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -5854,6 +4136,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5869,6 +4153,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5883,6 +4169,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5898,6 +4186,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5912,6 +4202,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5927,6 +4219,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5941,6 +4235,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5956,6 +4252,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5970,6 +4268,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -5985,6 +4285,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -5999,6 +4301,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6014,6 +4318,8 @@ Out:
 FileTable:
 Heap:
 {1=10}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6028,6 +4334,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6042,6 +4350,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6056,6 +4366,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6070,6 +4382,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6084,6 +4398,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6098,6 +4414,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6112,6 +4430,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6126,6 +4446,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6140,6 +4462,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6154,6 +4478,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6168,6 +4494,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6182,6 +4510,8 @@ Out:
 FileTable:
 Heap:
 {1=100}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6196,6 +4526,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6209,6 +4541,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6223,6 +4557,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6236,6 +4572,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6250,6 +4588,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6263,6 +4603,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6277,6 +4619,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6290,6 +4634,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6304,6 +4650,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6317,6 +4665,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6331,6 +4681,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6344,6 +4696,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6359,6 +4713,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6372,6 +4728,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6387,6 +4745,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6400,6 +4760,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6415,6 +4777,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6428,6 +4792,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [2])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6443,6 +4809,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -6455,6 +4823,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6470,6 +4840,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6484,6 +4856,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6498,6 +4872,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6512,6 +4888,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6526,6 +4904,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6540,6 +4920,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6554,6 +4936,8 @@ Out:
 FileTable:
 Heap:
 {1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -6567,2202 +4951,14 @@ Out:
 FileTable:
 Heap:
 {1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-Ref(int) v1;
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-Ref(int) v1
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-Ref(int) v1
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt;
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-int cnt
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1);
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1)
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-new(v1,1)
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (0, int)
-Out:
-FileTable:
-Heap:
-{}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-createSemaphore(cnt, rH(v1))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 0
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt));
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt))
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt))
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt))
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 4
-ExeStack:
-wH(v1,rH(v1) * 10)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 4
-ExeStack:
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10)
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10)
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 10)
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 5
-ExeStack:
-wH(v1,rH(v1) * 2)
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=100}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 5
-ExeStack:
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1)
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-print(rH(v1) - 1)
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-199
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-199
-FileTable:
-Heap:
-{1=200}
-
->>> ProgramState ID: 3
-ExeStack:
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-200
-199
-FileTable:
-Heap:
-{1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(1, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
 Ref(int) v1;
 int cnt;
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8781,12 +4977,14 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
 Ref(int) v1
 int cnt;
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8805,12 +5003,14 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
 Ref(int) v1
 int cnt;
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8829,11 +5029,13 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
 int cnt;
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8853,11 +5055,13 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
 int cnt;
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8877,11 +5081,13 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
 int cnt
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8901,11 +5107,13 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
 int cnt
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8925,10 +5133,12 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8949,10 +5159,12 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
-new(v1,1);
+new(v1,2);
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8973,10 +5185,12 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
-new(v1,1)
+new(v1,2)
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -8997,10 +5211,12 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
-new(v1,1)
+new(v1,2)
 createSemaphore(cnt, rH(v1));
 fork(acquire(cnt);
 wH(v1,rH(v1) * 10);
@@ -9021,6 +5237,8 @@ Out:
 FileTable:
 Heap:
 {}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9043,7 +5261,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9066,7 +5286,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9089,7 +5311,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9112,7 +5336,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=0, table={}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9134,7 +5360,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9156,29 +5384,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
-
->>> ProgramState ID: 0
-ExeStack:
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-print(rH(v1));
-release(cnt))
-fork(acquire(cnt);
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt));
-acquire(cnt);
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9200,7 +5408,33 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+wH(v1,rH(v1) * 2);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9218,7 +5452,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9232,7 +5468,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9250,7 +5488,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9264,7 +5504,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9282,7 +5524,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9296,7 +5540,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9314,7 +5560,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9328,7 +5576,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9346,7 +5596,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9360,7 +5612,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9378,7 +5632,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9392,7 +5648,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9405,7 +5663,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9418,7 +5678,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9433,7 +5695,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9446,7 +5710,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9459,7 +5725,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9474,7 +5742,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9487,7 +5757,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9500,7 +5772,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9515,7 +5789,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9528,7 +5804,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9541,7 +5819,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9556,7 +5836,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9569,7 +5851,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9582,7 +5866,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9597,7 +5883,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9610,7 +5898,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9623,7 +5913,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9638,7 +5930,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9651,7 +5945,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9664,7 +5960,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9679,7 +5977,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -9692,7 +5992,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9705,7 +6007,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9720,11 +6024,12 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=1}
+{1=2}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1])}]
 
 >>> ProgramState ID: 0
 ExeStack:
-acquire(cnt)
 print(rH(v1) - 1);
 release(cnt)
 SymTable:
@@ -9733,7 +6038,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9745,7 +6052,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9760,11 +6069,12 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
-acquire(cnt)
 print(rH(v1) - 1);
 release(cnt)
 SymTable:
@@ -9773,7 +6083,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9785,7 +6097,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9800,11 +6114,12 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
-acquire(cnt)
 print(rH(v1) - 1);
 release(cnt)
 SymTable:
@@ -9813,7 +6128,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9825,7 +6142,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9840,11 +6159,12 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
-acquire(cnt)
 print(rH(v1) - 1);
 release(cnt)
 SymTable:
@@ -9853,7 +6173,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 1
 ExeStack:
@@ -9865,7 +6187,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -9880,523 +6204,9 @@ v1 --> (1, int)
 Out:
 FileTable:
 Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-print(rH(v1))
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 1
-ExeStack:
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-acquire(cnt)
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 0
-ExeStack:
-print(rH(v1) - 1);
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
-
->>> ProgramState ID: 2
-ExeStack:
-acquire(cnt)
-wH(v1,rH(v1) * 10);
-wH(v1,rH(v1) * 2);
-print(rH(v1));
-release(cnt)
-SymTable:
-cnt --> 1
-v1 --> (1, int)
-Out:
-10
-FileTable:
-Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -10406,10 +6216,25 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10422,10 +6247,11 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -10435,10 +6261,25 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10451,10 +6292,11 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -10464,10 +6306,25 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10480,23 +6337,39 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
+print(rH(v1) - 1)
 release(cnt)
 SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10509,11 +6382,11 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -10522,11 +6395,28 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10539,11 +6429,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -10552,11 +6444,28 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10569,11 +6478,111 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 0
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+wH(v1,rH(v1) * 2);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 0
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+wH(v1,rH(v1) * 2);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [1, 0])}]
 
 >>> ProgramState ID: 0
 ExeStack:
@@ -10581,11 +6590,27 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
+
+>>> ProgramState ID: 1
+ExeStack:
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+19
+FileTable:
+Heap:
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10597,11 +6622,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10613,11 +6640,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10629,11 +6658,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10645,11 +6676,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=10}
+{1=20}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10660,11 +6693,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=100}
+{1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10675,11 +6710,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=100}
+{1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10690,11 +6727,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=100}
+{1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10705,11 +6744,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=100}
+{1=200}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10719,11 +6760,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=200}
+{1=400}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10733,11 +6776,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=200}
+{1=400}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10747,11 +6792,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=200}
+{1=400}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10761,11 +6808,13 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
+20
+19
 FileTable:
 Heap:
-{1=200}
+{1=400}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10774,12 +6823,14 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
-200
+20
+19
+400
 FileTable:
 Heap:
-{1=200}
+{1=400}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10788,12 +6839,14 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
-200
+20
+19
+400
 FileTable:
 Heap:
-{1=200}
+{1=400}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [2])}]
 
 >>> ProgramState ID: 2
 ExeStack:
@@ -10801,10 +6854,12 @@ SymTable:
 cnt --> 1
 v1 --> (1, int)
 Out:
-10
-9
-200
+20
+19
+400
 FileTable:
 Heap:
-{1=200}
+{1=400}
+CountSemaphore:
+SemaphoreTable [freeLocation=1, table={1=(2, [])}]
 

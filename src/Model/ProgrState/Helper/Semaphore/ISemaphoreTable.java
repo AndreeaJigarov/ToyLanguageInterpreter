@@ -11,4 +11,5 @@ public interface ISemaphoreTable {
     boolean contains(int index);
     Map<Integer, SemaphoreEntry> getContent();
     ReentrantLock getLock();
+    String toString();
 }
