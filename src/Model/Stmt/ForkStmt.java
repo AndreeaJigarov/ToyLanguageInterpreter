@@ -20,7 +20,7 @@ public class ForkStmt implements IStmt {
         MyIStack<IStmt> newStack = new MyStack<IStmt>();
         newStack.push(stmt);
         MyIDictionary<String, IValue> newSymTable = state.getSymTable().clone(); // deep copy
-        return new PrgState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap());
+        return new PrgState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap(), state.getLatchTable());
     }
 
     @Override

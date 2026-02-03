@@ -31,6 +31,9 @@ public class InterpreterWindow {
     private final TableView<Map.Entry<Integer, IValue>> heapTable = new TableView<>();
     private final TableView<Map.Entry<String, IValue>> symTable = new TableView<>();
 
+    //LATCH TABLE
+    private final TableView<Map.Entry<Integer, Integer>> latchTable = new TableView<>();
+
     private final TextField nrPrgStates = new TextField();
     private final Button oneStepBtn = new Button("Run one step");
 
@@ -41,6 +44,7 @@ public class InterpreterWindow {
         //setup the table
         setupHeapTable();
         setupSymTable();
+        setupLatchTable();
 
         //titled panes
         TitledPane prgPane = new TitledPane("PrgState IDs", prgIds);
@@ -49,9 +53,11 @@ public class InterpreterWindow {
         TitledPane symPane = new TitledPane("SymTable", symTable);
         TitledPane outPane = new TitledPane("Out", out);
         TitledPane filePane = new TitledPane("FileTable", fileTable);
+        TitledPane latchPane = new TitledPane("LatchTable", latchTable);
+
 
         VBox left = new VBox(10, prgPane, stackPane);
-        VBox mid  = new VBox(10, heapPane, symPane);
+        VBox mid  = new VBox(10, heapPane, symPane, latchPane);
         VBox right = new VBox(10, outPane, filePane);
 
         VBox.setVgrow(prgIds, Priority.ALWAYS);
@@ -60,6 +66,7 @@ public class InterpreterWindow {
         VBox.setVgrow(symTable, Priority.ALWAYS);
         VBox.setVgrow(out, Priority.ALWAYS);
         VBox.setVgrow(fileTable, Priority.ALWAYS);
+        VBox.setVgrow(latchTable, Priority.ALWAYS);
 
 
         // BOTTOM CONTROLS
@@ -142,6 +149,16 @@ public class InterpreterWindow {
 
     }
 
+    private void setupLatchTable() {
+        TableColumn<Map.Entry<Integer, Integer>, Integer> locCol = new TableColumn<>("location");
+        locCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getKey()));
+
+        TableColumn<Map.Entry<Integer, Integer>, Integer> valCol = new TableColumn<>("value");
+        valCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue()));
+
+        latchTable.getColumns().addAll(locCol, valCol);
+    }
+
     private void updateAll() {
 
             List<PrgState> prgs = ctrl.getRepository().getPrgList();
@@ -159,6 +176,9 @@ public class InterpreterWindow {
                 exeStack.getItems().clear();
                 symTable.getItems().clear();
                 oneStepBtn.setDisable(true);
+
+                latchTable.getItems().clear();
+
                 return;
             }
             nrPrgStates.setText(String.valueOf(prgs.size()));
@@ -182,6 +202,11 @@ public class InterpreterWindow {
             fileTable.setItems(FXCollections.observableArrayList(
                     prgs.get(0).getFileTable().getKeys().stream().map(StringValue::getValue).toList()
             ));
+
+            latchTable.setItems(FXCollections.observableArrayList(
+                    prgs.get(0).getLatchTable().getContent().entrySet().stream().toList()
+            ));
+            latchTable.refresh();
 
             if (prgIds.getSelectionModel().getSelectedItem() == null) {
                 prgIds.getSelectionModel().selectFirst();

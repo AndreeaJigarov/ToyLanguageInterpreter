@@ -7,6 +7,8 @@ import Model.ProgrState.Helper.FileTable.FileTable;
 import Model.ProgrState.Helper.FileTable.MyFileTable;
 import Model.ProgrState.Helper.Heap.IHeap;
 import Model.ProgrState.Helper.Heap.MyHeap;
+import Model.ProgrState.Helper.Latch.ILatchTable;
+import Model.ProgrState.Helper.Latch.LatchTable;
 import Model.ProgrState.Helper.List.MyIList;
 import Model.ProgrState.Helper.List.MyList;
 import Model.ProgrState.Helper.Stack.MyIStack;
@@ -32,32 +34,23 @@ public class PrgState {
     private MyIDictionary<String,IValue> symTable;
     private MyIList<IValue> out;
     private FileTable<StringValue, BufferedReader> fileTable;
-    private IStmt originalProgram; //good to have cica
+    private IStmt originalProgram;
 
-    // wrong for forked threads, it must share the same filetable and heap
-//    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
-//        exeStack = stk;
-//        symTable = symtbl;
-//        out = ot;
-//        this.fileTable = new MyFileTable<>();
-//        this.heap = new MyHeap();
-//        originalProgram = orPrg;// DEEPCOPY recreate entire original program
-//        exeStack.push(orPrg);
-//        this.id = getNewId(); // Task 8: Assign unique ID
-//    }
+    private ILatchTable latchTable;
 
     private static synchronized int getNewId() { // Task 8: Synchronized for thread safety
         return lastId++;
     }
 //for fork constructor
     public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot,
-                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap) {
+                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap, ILatchTable latchTable) {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
         this.fileTable = fileTable;
         this.heap = heap;
-        this.id = getNewId(); // Task 8: Assign unique ID
+        this.id = getNewId();
+        this.latchTable = latchTable;
     }
 
 
@@ -68,6 +61,7 @@ public class PrgState {
         this.heap = new MyHeap();
         out= new MyList<IValue>();
         fileTable = new MyFileTable<>();
+        latchTable = new LatchTable() ;
         try {
             ex.typecheck(new MyDictionary<String, IType>());  // verifica tipurile cu un env gol
         } catch (MyException e) {
@@ -116,6 +110,10 @@ public class PrgState {
         this.heap = heap;
     }
 
+    public ILatchTable getLatchTable() {
+        return latchTable;
+    }
+
     public int getId() {
         return id;
     }
@@ -144,6 +142,7 @@ public class PrgState {
                 "\n Out: " + out.toString() +
                 "\n FileTable: " + fileTable.toString() +
                 "\n Heap: " + heap.toString()+
+                "\n LatchTable: " + latchTable.toString()+
                 "\n----------------------------------------------- \n";
     }
 
