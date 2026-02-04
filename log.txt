@@ -1,0 +1,2484 @@
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v1;
+int cnt;
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v1
+int cnt;
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v1
+int cnt;
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+int cnt;
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+int cnt;
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+int cnt
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+int cnt
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,2);
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,2)
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,2)
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+newSemaphore(cnt,rH(v1),1);
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+newSemaphore(cnt,rH(v1),1)
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+newSemaphore(cnt,rH(v1),1)
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 0
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt));
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt))
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt);
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt);
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10)
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10)
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10)
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 10)
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=2}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+acquire(cnt)
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [1], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 1
+ExeStack:
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v1,rH(v1) * 10);
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v1,rH(v1) * 10)
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v1,rH(v1) * 10)
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v1,rH(v1) * 10)
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=20}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+print(rH(v1));
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+print(rH(v1))
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [2], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 2
+ExeStack:
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+acquire(cnt)
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [0], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+print(rH(v1) - 1);
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [0], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+print(rH(v1) - 1)
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [0], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+print(rH(v1) - 1)
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [0], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+199
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [0], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+release(cnt)
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+199
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [0], 1)
+
+
+>>> ProgramState ID: 0
+ExeStack:
+SymTable:
+cnt --> 1
+v1 --> (1, int)
+Out:
+20
+200
+199
+FileTable:
+Heap:
+{1=200}
+Semaphore:
+SemaphoreTable:
+1 -> (2, [], 1)
+
+
