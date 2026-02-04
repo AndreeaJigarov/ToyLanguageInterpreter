@@ -1,6 +1,8 @@
 package View.GUI;
 
 import Model.Exp.*;
+import Model.ProgrState.Helper.ProcTable.IProcTable;
+import Model.ProgrState.Helper.ProcTable.MyProcTable;
 import Model.ProgrState.PrgState;
 import Model.Stmt.*;
 import Model.Type.*;
@@ -204,6 +206,72 @@ public class ExamplesProvider {
         );
         examples.add(exFork);
 
+
+        //FOR PROCEDURE
+        // procedure sum(a,b) { v=a+b; print(v) }
+        IStmt sumBody = new CompStmt(
+                new AssignStmt("v", new ArithExp('+', new VarExp("a"), new VarExp("b"))),
+                new PrintStmt(new VarExp("v"))
+        );
+        // procedure product(a,b) { v=a*b; print(v) }
+        IStmt productBody = new CompStmt(
+                new AssignStmt("v", new ArithExp('*', new VarExp("a"), new VarExp("b"))),
+                new PrintStmt(new VarExp("v"))
+        );  //NOT ADDED , i will add them in selector window , but just to be here
+        //main program
+        //v=2;w=5;call sum(v*10,w);print(v);
+        //fork(call product(v,w);
+        //fork(call sum(v,w)))
+        //The final Out should be {25,2,10,7}
+        IStmt procedureExample = new CompStmt(
+                new VarDeclStmt("v", new IntType()), // Add declaration
+                new CompStmt(
+                        new VarDeclStmt("w", new IntType()), // Add declaration
+                        new CompStmt(
+                                new AssignStmt("v", new ValueExp(new IntValue(2))),
+                                new CompStmt(
+                                        new AssignStmt("w", new ValueExp(new IntValue(5))),
+                                        new CompStmt(
+                                                new CallStmt("sum", List.of(
+                                                        new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))),
+                                                        new VarExp("w")
+                                                )),
+                                                new CompStmt(
+                                                        new PrintStmt(new VarExp("v")),
+                                                        new CompStmt(
+                                                                new ForkStmt(new CallStmt("product", List.of(new VarExp("v"), new VarExp("w")))),
+                                                                new ForkStmt(new CallStmt("sum", List.of(new VarExp("v"), new VarExp("w"))))
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+        examples.add(procedureExample);
+
         return examples;
+    }
+
+
+    public static IProcTable getProcTableForExample() {
+        IProcTable procTable = new MyProcTable();
+
+        //procedure sum(a,b) { v=a+b; print(v) }
+        IStmt sumBody = new CompStmt(
+                new AssignStmt("v", new ArithExp('+', new VarExp("a"), new VarExp("b"))),
+                new PrintStmt(new VarExp("v"))
+        );
+
+        // procedure product(a,b) { v=a*b; print(v) }
+        IStmt productBody = new CompStmt(
+                new AssignStmt("v", new ArithExp('*', new VarExp("a"), new VarExp("b"))),
+                new PrintStmt(new VarExp("v"))
+        );
+
+        procTable.put("sum", List.of("a", "b"), sumBody);
+        procTable.put("product", List.of("a", "b"), productBody);
+
+        return procTable;
     }
 }

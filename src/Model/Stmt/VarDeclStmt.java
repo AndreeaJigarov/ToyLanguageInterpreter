@@ -18,7 +18,7 @@ public class VarDeclStmt implements IStmt{
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        var symTbl = state.getSymTable();
+        var symTbl = state.getTopSymTable();
         if(symTbl.containsKey(name))throw new MyException("Variable "+name+" already exists");
         symTbl.put(name, type.defaultValue());
         //return state;
@@ -33,5 +33,10 @@ public class VarDeclStmt implements IStmt{
     public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
         typeEnv.put(name, type);
         return typeEnv;
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 }

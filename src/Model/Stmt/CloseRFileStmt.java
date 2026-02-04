@@ -21,7 +21,7 @@ public class CloseRFileStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        IValue val = exp.eval(state.getSymTable(), state.getHeap());
+        IValue val = exp.eval(state.getTopSymTable(), state.getHeap());
         if (!val.getType().equals(new StringType())) {
             throw new MyException("Exp not string");
         }
@@ -53,5 +53,10 @@ public class CloseRFileStmt implements IStmt {
         } else {
             throw new MyException("CloseRFileStmt: expression is not of StringType");
         }
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 }

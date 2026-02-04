@@ -24,7 +24,7 @@ public class OpenRFileStmt implements IStmt{
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        IValue val = exp.eval(state.getSymTable(), state.getHeap());
+        IValue val = exp.eval(state.getTopSymTable(), state.getHeap());
         if (!val.getType().equals(new StringType())) {
             throw new MyException("Expression not StringType");
         }
@@ -52,6 +52,11 @@ public class OpenRFileStmt implements IStmt{
         IType typexp = exp.typecheck(typeEnv);
         if (typexp.equals(new StringType())) return typeEnv;
         else throw new MyException("Name of file not StringType");
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 
 }

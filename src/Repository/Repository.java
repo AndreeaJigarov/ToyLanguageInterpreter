@@ -84,8 +84,8 @@ public class Repository implements IRepository {
                 logFile.println(stmt);  // toString() should return infix form
             }
             logFile.println("SymTable:");
-            for (String var : state.getSymTable().getKeys()) {
-                IValue val = state.getSymTable().lookup(var);
+            for (String var : state.getTopSymTable().getKeys()) {
+                IValue val = state.getTopSymTable().lookup(var);
                 logFile.println(var + " --> " + val);
             }
             logFile.println("Out:");

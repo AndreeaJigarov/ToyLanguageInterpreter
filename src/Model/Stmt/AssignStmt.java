@@ -25,7 +25,7 @@ public class AssignStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIStack<IStmt> stk = state.getExeStack();
-        MyIDictionary<String, IValue> symTbl = state.getSymTable();
+        MyIDictionary<String, IValue> symTbl = state.getTopSymTable(); //updated
         IHeap<Integer, IValue> heap = state.getHeap();
 
         if (symTbl.containsKey(id)){
@@ -60,6 +60,11 @@ public class AssignStmt implements IStmt {
         }else{
             throw new MyException("Assignment: right hand side and left hand side have different types");
         }
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 
 }

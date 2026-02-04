@@ -26,11 +26,11 @@ public class ReadFileStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        if (!state.getSymTable().containsKey(varName) || !state.getSymTable().lookup(varName).getType().equals(new IntType())) {
+        if (!state.getTopSymTable().containsKey(varName) || !state.getTopSymTable().lookup(varName).getType().equals(new IntType())) {
             throw new MyException("Var not defined or not int");
         }
 
-        IValue val = exp.eval(state.getSymTable(), state.getHeap());
+        IValue val = exp.eval(state.getTopSymTable(), state.getHeap());
         if (!val.getType().equals(new StringType())) {
             throw new MyException("Exp not string");
         }
@@ -41,7 +41,7 @@ public class ReadFileStmt implements IStmt {
         try {
             String line = br.readLine();
             IntValue intVal = (line == null) ? new IntValue(0) : new IntValue(Integer.parseInt(line));
-            state.getSymTable().update(varName, intVal);
+            state.getTopSymTable().update(varName, intVal);
         } catch (IOException | NumberFormatException e) {
             throw new MyException("Read error: " + e.getMessage());
         }
@@ -66,5 +66,10 @@ public class ReadFileStmt implements IStmt {
             throw new MyException("ReadFileStmt: variable is not of IntType");
         }
         return typeEnv;
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 }

@@ -20,7 +20,7 @@ public class WriteHeapStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        var symTable = state.getSymTable();
+        var symTable = state.getTopSymTable();
         var heap = state.getHeap();
 
         if (!symTable.containsKey(varName))
@@ -61,5 +61,10 @@ public class WriteHeapStmt implements IStmt {
         } else {
             throw new MyException("WriteHeapStmt: variable is not of reference type");
         }
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 }

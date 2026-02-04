@@ -19,14 +19,27 @@ public class ForkStmt implements IStmt {
     public PrgState execute(PrgState state) throws MyException {
         MyIStack<IStmt> newStack = new MyStack<IStmt>();
         newStack.push(stmt);
-        MyIDictionary<String, IValue> newSymTable = state.getSymTable().clone(); // deep copy
-        return new PrgState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap());
+
+        //MyIDictionary<String, IValue> newSymTable = state.getSymTable().clone(); // deep copy
+        //clone the entire stack of smtabls
+        MyIStack<MyIDictionary<String, IValue>> newSymTableStack = new MyStack<>();
+        for (MyIDictionary<String, IValue> table : state.getSymTableStack()) {
+            newSymTableStack.push(table.clone());
+        }
+
+        return new PrgState(newStack, newSymTableStack, state.getOut(),
+                state.getFileTable(), state.getHeap(), state.getProcTable());
     }
 
     @Override
     public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
         stmt.typecheck(typeEnv.clone());
         return typeEnv;
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 
     @Override

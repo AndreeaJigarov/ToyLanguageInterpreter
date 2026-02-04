@@ -25,8 +25,13 @@ public class PrintStmt implements IStmt {
         return typeEnv; // does not care the type it has, no error
     }
 
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
+    }
+
     public PrgState execute(PrgState state) throws MyException {
-        IValue val = exp.eval(state.getSymTable(), state.getHeap());
+        IValue val = exp.eval(state.getTopSymTable(), state.getHeap());
         MyIList<IValue> out = state.getOut();
         out.add(val);
         //return state;

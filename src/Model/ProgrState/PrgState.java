@@ -9,6 +9,8 @@ import Model.ProgrState.Helper.Heap.IHeap;
 import Model.ProgrState.Helper.Heap.MyHeap;
 import Model.ProgrState.Helper.List.MyIList;
 import Model.ProgrState.Helper.List.MyList;
+import Model.ProgrState.Helper.ProcTable.IProcTable;
+import Model.ProgrState.Helper.ProcTable.MyProcTable;
 import Model.ProgrState.Helper.Stack.MyIStack;
 import Model.ProgrState.Helper.Stack.MyStack;
 import Model.Stmt.IStmt;
@@ -24,47 +26,53 @@ import java.util.List;
 
 
 public class PrgState {
-    private IHeap<Integer, IValue> heap;
+
     private static int lastId = 0; // Task 8: Static for ID management , more specific naming
     private int id;
 
     private MyIStack<IStmt>exeStack;
-    private MyIDictionary<String,IValue> symTable;
+
+    //private MyIDictionary<String,IValue> symTable;
+    private IProcTable procTable;
+    private MyIStack<MyIDictionary<String, IValue>> symTableStack;
+
+
     private MyIList<IValue> out;
     private FileTable<StringValue, BufferedReader> fileTable;
-    private IStmt originalProgram; //good to have cica
+    private IHeap<Integer, IValue> heap;
 
-    // wrong for forked threads, it must share the same filetable and heap
-//    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
-//        exeStack = stk;
-//        symTable = symtbl;
-//        out = ot;
-//        this.fileTable = new MyFileTable<>();
-//        this.heap = new MyHeap();
-//        originalProgram = orPrg;// DEEPCOPY recreate entire original program
-//        exeStack.push(orPrg);
-//        this.id = getNewId(); // Task 8: Assign unique ID
-//    }
+    private IStmt originalProgram;
+
+
+
 
     private static synchronized int getNewId() { // Task 8: Synchronized for thread safety
         return lastId++;
     }
 //for fork constructor
-    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot,
-                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap) {
+    public PrgState(MyIStack<IStmt> stk, MyIStack<MyIDictionary<String, IValue>> symtblStack, MyIList<IValue> ot,    //added proc and orig progr
+                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap, IProcTable proc) {
         exeStack = stk;
-        symTable = symtbl;
+        symTableStack = symtblStack;
         out = ot;
         this.fileTable = fileTable;
         this.heap = heap;
-        this.id = getNewId(); // Task 8: Assign unique ID
+
+        this.procTable = proc;
+
+        this.id = getNewId();
     }
 
 
     public PrgState(IStmt ex) {
         originalProgram=ex;
         exeStack = new MyStack<IStmt>();
-        symTable = new MyDictionary<String, IValue>();
+
+        symTableStack = new MyStack<MyIDictionary<String, IValue>>();
+        symTableStack.push(new MyDictionary<String, IValue>());
+        this.procTable = new MyProcTable();
+
+
         this.heap = new MyHeap();
         out= new MyList<IValue>();
         fileTable = new MyFileTable<>();
@@ -74,7 +82,7 @@ public class PrgState {
             throw new RuntimeException("Typecheck failed: " + e.getMessage());
         }
         exeStack.push(ex);
-        id=getNewId(); // Task 8
+        id=getNewId();
     }
 
     public MyIStack<IStmt> getExeStack() {
@@ -84,11 +92,25 @@ public class PrgState {
         this.exeStack = exeStack;
     }
 
-    public MyIDictionary<String,IValue> getSymTable() {
-        return symTable;
+    //STACKS
+    public MyIStack<MyIDictionary<String,IValue>> getSymTableStack() {
+        return symTableStack;
     }
-    public void setSymTable(MyIDictionary<String,IValue> symTable) {
-        this.symTable = symTable;
+    public void setSymTableStack(MyIStack<MyIDictionary<String,IValue>> symTable) {
+        this.symTableStack = symTable;
+    }
+
+    public MyIDictionary<String, IValue> getTopSymTable() {
+        try {
+            return symTableStack.peek();
+        } catch (Exception e) {
+            //should't get here
+            return null;
+        }
+    }
+
+    public IProcTable getProcTable() {
+        return procTable;
     }
 
     public MyIList<IValue> getOut() {
@@ -140,10 +162,11 @@ public class PrgState {
         return "----------------------------------------------- \n " +
                 ">>> ProgramState:" + "ID: " + id + // Task 8: Use instance id
                 "\n ExeStack: " + exeStack.toString() +
-                "\n SymTable: " + symTable.toString() +
+                "\n SymTable(top first): " + symTableStack.toString() +
                 "\n Out: " + out.toString() +
                 "\n FileTable: " + fileTable.toString() +
                 "\n Heap: " + heap.toString()+
+                "\n ProcTable: " + procTable.toString() +
                 "\n----------------------------------------------- \n";
     }
 

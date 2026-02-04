@@ -40,8 +40,13 @@ public class IfStmt implements IStmt{
 
     }
 
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
+    }
+
     public PrgState execute(PrgState state) throws MyException {
-        MyIDictionary<String, IValue> symTbl =  state.getSymTable();
+        MyIDictionary<String, IValue> symTbl =  state.getTopSymTable();
         MyIStack<IStmt> stk = state.getExeStack();
         IHeap<Integer, IValue> heap = state.getHeap();
 

@@ -20,7 +20,7 @@ public class NewStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        var symTable = state.getSymTable();
+        var symTable = state.getTopSymTable();
         var heap = state.getHeap();
 
         if (!symTable.containsKey(varName))
@@ -54,5 +54,10 @@ public class NewStmt implements IStmt {
         if(typevar.equals(new RefType(typexp)))
             return typeEnv;
         else throw new MyException("NEW stmt : right hand side and left hand sie have different types");
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 }

@@ -17,7 +17,7 @@ public class WhileStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        IValue val = cond.eval(state.getSymTable(), state.getHeap());
+        IValue val = cond.eval(state.getTopSymTable(), state.getHeap());
         if (!(val instanceof BoolValue bv)) throw new MyException("While condition not boolean");
 
         if (bv.getValue()) {
@@ -38,5 +38,10 @@ public class WhileStmt implements IStmt {
         } else {
             throw new MyException("While condition not boolean");
         }
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
     }
 }

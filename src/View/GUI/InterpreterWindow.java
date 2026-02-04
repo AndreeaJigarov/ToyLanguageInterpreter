@@ -2,6 +2,7 @@ package View.GUI;
 
 import Controller.Controller;
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
 import Model.Stmt.IStmt;
 import Model.Value.IValue;
@@ -14,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,10 @@ public class InterpreterWindow {
     private final TableView<Map.Entry<Integer, IValue>> heapTable = new TableView<>();
     private final TableView<Map.Entry<String, IValue>> symTable = new TableView<>();
 
+
+    private final TableView<Map.Entry<String, Pair<List<String>, IStmt>>> procTable = new TableView<>();
+
+
     private final TextField nrPrgStates = new TextField();
     private final Button oneStepBtn = new Button("Run one step");
 
@@ -41,6 +47,8 @@ public class InterpreterWindow {
         //setup the table
         setupHeapTable();
         setupSymTable();
+        setupProcTable();
+
 
         //titled panes
         TitledPane prgPane = new TitledPane("PrgState IDs", prgIds);
@@ -49,9 +57,11 @@ public class InterpreterWindow {
         TitledPane symPane = new TitledPane("SymTable", symTable);
         TitledPane outPane = new TitledPane("Out", out);
         TitledPane filePane = new TitledPane("FileTable", fileTable);
+        TitledPane procPane = new TitledPane("ProcTable", procTable);
+
 
         VBox left = new VBox(10, prgPane, stackPane);
-        VBox mid  = new VBox(10, heapPane, symPane);
+        VBox mid  = new VBox(10, heapPane, symPane , procPane);
         VBox right = new VBox(10, outPane, filePane);
 
         VBox.setVgrow(prgIds, Priority.ALWAYS);
@@ -60,6 +70,8 @@ public class InterpreterWindow {
         VBox.setVgrow(symTable, Priority.ALWAYS);
         VBox.setVgrow(out, Priority.ALWAYS);
         VBox.setVgrow(fileTable, Priority.ALWAYS);
+        VBox.setVgrow(procTable, Priority.ALWAYS);
+
 
 
         // BOTTOM CONTROLS
@@ -142,6 +154,24 @@ public class InterpreterWindow {
 
     }
 
+    private void setupProcTable() {
+        // The key is a String, the value is a Pair containing the List of params and the Statement
+        TableColumn<Map.Entry<String, Pair<List<String>, IStmt>>, String> nameCol = new TableColumn<>("Procedure");
+        nameCol.setCellValueFactory(p -> new javafx.beans.property.SimpleStringProperty(
+                p.getValue().getKey() + "(" + String.join(", ", p.getValue().getValue().getKey()) + ")"
+        ));
+
+        TableColumn<Map.Entry<String, Pair<List<String>, IStmt>>, String> bodyCol = new TableColumn<>("Body");
+        bodyCol.setCellValueFactory(p -> new javafx.beans.property.SimpleStringProperty(
+                p.getValue().getValue().getValue().toString()
+        ));
+
+        procTable.getColumns().clear();
+        procTable.getColumns().addAll(nameCol, bodyCol); // This will now resolve correctly
+    }
+
+
+
     private void updateAll() {
 
             List<PrgState> prgs = ctrl.getRepository().getPrgList();
@@ -207,12 +237,18 @@ public class InterpreterWindow {
         }
         exeStack.setItems(FXCollections.observableArrayList(stackItems));
 
-        // Updated: Build symTable entries using getKeys() and lookup()
+        // Update: Get data from getTopSymTable() now
+        MyIDictionary<String, IValue> currentSymTable = ps.getTopSymTable();
         symTable.setItems(FXCollections.observableArrayList(
-                ps.getSymTable().getKeys().stream()
-                        .map(key -> Map.entry(key, ps.getSymTable().lookup(key)))
+                currentSymTable.getKeys().stream()
+                        .map(key -> Map.entry(key, currentSymTable.lookup(key)))
                         .toList()
         ));
+
+        procTable.setItems(FXCollections.observableArrayList(
+                ps.getProcTable().getContent().entrySet().stream().toList()
+        ));
+
     }
 
     private void runOneStep() {

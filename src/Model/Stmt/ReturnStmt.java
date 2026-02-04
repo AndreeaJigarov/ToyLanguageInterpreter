@@ -1,20 +1,19 @@
 package Model.Stmt;
 
 import Exceptions.MyException;
-import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.PrgState;
+import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.Type.IType;
 
-public class NopStmt implements IStmt{
-
+public class ReturnStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
-       // return state;
+        try {
+            state.getSymTableStack().pop(); //pop top SymTable
+        } catch (Exception e) {
+            throw new MyException("Return: symtblStack empty" + e.getMessage());
+        }
         return null;
-    }
-    @Override
-    public String toString(){
-        return "";
     }
 
     @Override
@@ -22,8 +21,10 @@ public class NopStmt implements IStmt{
         return typeEnv;
     }
 
-    @Override
     public IStmt deepCopy() {
-        return this.deepCopy();
+        return new ReturnStmt();
     }
+
+    @Override
+    public String toString() { return "return"; }
 }

@@ -11,4 +11,5 @@ public interface IStmt {
     //which is the execution method for a statement
     public String toString();
     MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException;
+    IStmt deepCopy();
 }

@@ -39,5 +39,10 @@ public class CompStmt implements IStmt {
         return typEnv2; // this makes all logic of typecheck prgstate function !!!!
     }
 
+    @Override
+    public IStmt deepCopy() {
+        return this.deepCopy();
+    }
+
 
 }

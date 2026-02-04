@@ -120,7 +120,7 @@ public class Controller  implements IController {
 
         // all addresses from all symtables
         List<Integer> addresses = prgList.stream()
-                .flatMap(prg -> prg.getSymTable().getValues().stream())
+                .flatMap(prg -> prg.getTopSymTable().getValues().stream())
                 .filter(v -> v instanceof RefValue)
                 .map(v -> ((RefValue) v).getAddress())
                 .toList();
