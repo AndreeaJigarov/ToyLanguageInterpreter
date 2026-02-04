@@ -37,7 +37,7 @@ public class SwitchStmt implements IStmt {
         IStmt innerIf = new IfStmt(rel2, stmt2, stmt3);
         IStmt outerIf = new IfStmt(rel1, stmt1, innerIf);
 
-        // Push the new statement on the stack [cite: 194]
+        // Push the new statement on the stack
         stack.push(outerIf);
 
         return null;
@@ -53,7 +53,7 @@ public class SwitchStmt implements IStmt {
         if (type.equals(type1) && type.equals(type2)) {
             // Requirement 1a: Typecheck stmt1, stmt2, and stmt3
             // We use clones of the environment to avoid local changes leaking
-            stmt1.typecheck(typeEnv.clone());
+            stmt1.typecheck(typeEnv.clone()); // for all go inside them to typecheck recursively
             stmt2.typecheck(typeEnv.clone());
             stmt3.typecheck(typeEnv.clone());
             return typeEnv;

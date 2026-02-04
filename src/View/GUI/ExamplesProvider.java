@@ -205,6 +205,13 @@ public class ExamplesProvider {
         examples.add(exFork);
 
         // SWITCH
+//        a=1;b=2;c=5;
+//        switch(a*10)
+//        (case (b*c) print(a);print(b))
+//        (case (10) print(100);print(200))
+//        (default print(300));
+//        print(300)
+//        The final Out should be {1,2,300}
         IStmt exSwitch = new CompStmt(
                 new VarDeclStmt("a", new IntType()),
                 new CompStmt(
@@ -238,6 +245,7 @@ public class ExamplesProvider {
 
         //FOR
         // v=20; (for(v=0; v<3; v=v+1) fork(print(v); v=v+1)); print(v*10)
+        //The final Out should be {0,1,2,30}
         IStmt exFor = new CompStmt(
                 new VarDeclStmt("v", new IntType()),
                 new CompStmt(
@@ -284,6 +292,39 @@ public class ExamplesProvider {
         );
         examples.add(exSleep);
 
+        //another sleep stmt
+//        v=10;
+//        (fork(v=v-1;v=v-1;print(v)); sleep(10);print(v*10)
+//        The final Out should be {8,100}
+        IStmt exSleep2 = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ValueExp(new IntValue(10))),
+                        new CompStmt(
+                                new ForkStmt(
+                                        new CompStmt(
+                                                new AssignStmt("v", new ArithExp( '-', new VarExp("v"), new ValueExp( new IntValue(1)))),
+                                                new  CompStmt(
+                                                        new AssignStmt("v", new ArithExp( '-', new VarExp("v"), new ValueExp( new IntValue(1)))),
+                                                        new PrintStmt(new VarExp("v"))
+                                                            )
+                                                    )
+                                ),
+                                new CompStmt(
+                                        new SleepStmt(10),
+                                        new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+                                )
+                                    )
+
+                        )
+                );
+        examples.add(exSleep2);
+
+
+
+
+
+        //WAIT - same as sleep but print the number
         // v=20; wait(10); print(v*10)
         IStmt exWait = new CompStmt(
                 new VarDeclStmt("v", new IntType()),
@@ -297,7 +338,7 @@ public class ExamplesProvider {
         );
         examples.add(exWait);
 
-        // EXAMPLE USE EXPRESSION MUL
+        //EXPRESSION MUL
         // v1=2; v2=3; (if (v1 > 0) then print(MUL(v1,v2)) else print (v1))
         IStmt exMul = new CompStmt(
                 new VarDeclStmt("v1", new IntType()),
@@ -351,7 +392,7 @@ public class ExamplesProvider {
 
         //COND ASSIGNMENT
         // Ref int a; Ref int b; int v; new(a,0); new(b,0); wh(a,1); wh(b,2);
-// v=(rh(a)<rh(b))?100:200; print(v); v=((rh(b)-2)>rh(a))?100:200; print(v)
+        // v=(rh(a)<rh(b))?100:200; print(v); v=((rh(b)-2)>rh(a))?100:200; print(v)
         IStmt exCond = new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
                 new CompStmt(new VarDeclStmt("b", new RefType(new IntType())),
                         new CompStmt(new VarDeclStmt("v", new IntType()),

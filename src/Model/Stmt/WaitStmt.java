@@ -17,10 +17,10 @@ public class WaitStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        MyIStack<IStmt> stack = state.getExeStack(); // The statement is already popped by the PrgState.oneStep() logic [cite: 359]
+        MyIStack<IStmt> stack = state.getExeStack();
 
         if (number != 0) {
-            // Requirement 2a: push (print(number); wait(number-1)) on the stack
+            // push (print(number); wait(number-1)) on the stack
             IStmt transformation = new CompStmt(
                     new PrintStmt(new ValueExp(new IntValue(number))),
                     new WaitStmt(number - 1)
