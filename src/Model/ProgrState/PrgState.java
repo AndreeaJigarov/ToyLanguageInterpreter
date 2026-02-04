@@ -128,8 +128,7 @@ public class PrgState {
         if(exeStack.isEmpty())
             throw new MyException("PrgState stack is empty!!!");
         IStmt curr = (IStmt) exeStack.pop();
-        if (curr instanceof NopStmt)
-            return this;
+
         return curr.execute(this);
     }
 
