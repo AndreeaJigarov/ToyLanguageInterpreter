@@ -210,7 +210,6 @@ public class ExamplesProvider {
         // fork(fork(lock(x);wh(v1,rh(v1)-1);unlock(x));lock(x);wh(v1,rh(v1)+1);unlock(x));
         // fork(fork(wh(v2,rh(v2)+1));wh(v2,rh(v2)+1);unlock(x)); skip... skip; print(rh(v1)); print(rh(v2))
 
-
         IStmt exLockExamCorrected = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
                 new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
                         new CompStmt(new VarDeclStmt("x", new IntType()),
@@ -233,6 +232,8 @@ public class ExamplesProvider {
                                                                                         new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v1"))), new PrintStmt(new ReadHeapExp(new VarExp("v2")))
                                                                                                     ))))))))))))))))))));
         examples.add(exLockExamCorrected);
+
+
 
         IStmt exLockExam2 = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
                 new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
