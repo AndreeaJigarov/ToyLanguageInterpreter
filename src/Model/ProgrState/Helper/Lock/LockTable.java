@@ -11,6 +11,7 @@ public class LockTable implements ILockTable {
     private int freeLocation = 0;
     private final ReentrantLock lock = new ReentrantLock(); // to assure the lock mechanism
 
+
     @Override
     public int allocate(int value) {
         lock.lock();

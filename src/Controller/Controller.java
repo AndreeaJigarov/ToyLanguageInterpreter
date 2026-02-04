@@ -72,33 +72,7 @@ public class Controller  implements IController {
         this.repository = repository;
     }
 
-    //public void allStep() throws MyException {
-//        PrgState prg = repository.getCrtPrg();
-//        System.out.println("Initial state:");
-//        System.out.println(prg);
-//        repository.logPrgStateExec(prg); //added
-//
-//
-//        while(!prg.getExeStack().isEmpty()){
-//            prg = oneStep(prg);
-//            System.out.println("After one step:");
-//            System.out.println(prg);
-//            repository.logPrgStateExec(prg);
-//            //added
-//            var safeAddresses = getAllAddresses(
-//                    prg.getSymTable().getValues(),
-//                    prg.getHeap().getContent()
-//            );
-//
-//            prg.getHeap().setContent(
-//                    prg.getHeap().getContent().entrySet().stream()
-//                            .filter(e -> safeAddresses.contains(e.getKey()))
-//                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-//            );
-//
-//            repository.logPrgStateExec(prg);
-//        }
-//    }
+
 
     void conservativeGarbageCollector(List<PrgState> prgList) {
 
