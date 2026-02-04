@@ -26,6 +26,7 @@ public class AcquireStmt implements IStmt {
 
         lock.lock();
         try {
+            //check if in symtable, check if int
             if (!state.getSymTable().containsKey(var)) throw new MyException("Acquire: Variable not found");
             IValue val = state.getSymTable().lookup(var);
             if (!val.getType().equals(new IntType())) throw new MyException("Acquire: Variable is not int");
@@ -33,6 +34,7 @@ public class AcquireStmt implements IStmt {
             int foundIndex = ((IntValue) val).getValue();
             if (!semTable.contains(foundIndex)) throw new MyException("Acquire: Index not in Semaphore Table");
 
+            //get the semaphore we are talking about in the variable
             SemaphoreEntry entry = semTable.get(foundIndex);
             int N1 = entry.getCapacity();
             List<Integer> list1 = entry.getThreadIds();
@@ -41,8 +43,8 @@ public class AcquireStmt implements IStmt {
             if (N1 > NL) {
                 if (!list1.contains(state.getId())) {
                     list1.add(state.getId());
-                    semTable.update(foundIndex, entry);
-                }
+                    semTable.update(foundIndex, entry); // new entry with new progrId in list
+                } //else do nothing
             } else {
                 state.getExeStack().push(this);
             }

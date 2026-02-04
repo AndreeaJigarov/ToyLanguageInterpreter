@@ -23,7 +23,7 @@ public class ReleaseStmt implements IStmt {
         ISemaphoreTable semTable = state.getSemaphoreTable();
         ReentrantLock lock = semTable.getLock();
 
-        lock.lock();
+        lock.lock(); //cause the semaphore is an atomic variable
         try {
             if (!state.getSymTable().containsKey(var)) throw new MyException("Release: Variable not found");
             int foundIndex = ((IntValue) state.getSymTable().lookup(var)).getValue();
