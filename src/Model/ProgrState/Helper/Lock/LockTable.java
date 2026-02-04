@@ -67,6 +67,19 @@ public class LockTable implements ILockTable {
     }
 
     @Override
+    public boolean tryLock(int index, int value) {
+        lock.lock();
+        try {
+            if (table.get(index) == -1) {
+                table.put(index, value);
+                return true;
+            }
+            return false;
+        }
+        finally { lock.unlock(); }
+    }
+
+    @Override
     public String toString() {
         lock.lock();
         try { return table.toString(); }

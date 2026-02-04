@@ -106,7 +106,10 @@ public class Controller  implements IController {
 
             oneStepForAllPrg(prgList);
 
+            //repository.setPrgList(prgList);
             prgList = removeCompletedPrg(repository.getPrgList());
+
+            ///  ASTA FAC
         }
         executor.shutdownNow();
         repository.setPrgList(prgList);

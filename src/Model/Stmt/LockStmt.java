@@ -24,8 +24,17 @@ public class LockStmt implements IStmt {
             throw new MyException("Lock Error: Variable " + var + " not found in Symbol Table.");
         }
 
+        ///  MAKE SURE VAR IS AN INT!!!!
+
         int foundIndex = ((IntValue) state.getSymTable().lookup(var)).getValue();
-        ReentrantLock lock = lockTable.getLock(); //get the Java lock from our lockTable to make the lock mechanism
+
+        if (!lockTable.contains(foundIndex))
+            throw new MyException("Lock index not found");
+
+        if (!state.getLockTable().tryLock(foundIndex, state.getId()))
+            state.getExeStack().push(new LockStmt(var));
+
+        /*ReentrantLock lock = lockTable.getLock(); //get the Java lock from our lockTable to make the lock mechanism
 
         lock.lock();
         try {
@@ -37,7 +46,8 @@ public class LockStmt implements IStmt {
             }
         } finally {
             lock.unlock();
-        }
+        }*/
+
         return null;
     }
 

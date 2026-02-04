@@ -11,4 +11,6 @@ public interface ILockTable {
     boolean contains(int index);
     Map<Integer, Integer> getContent();
     ReentrantLock getLock();
+
+    boolean tryLock(int index, int value);
 }
