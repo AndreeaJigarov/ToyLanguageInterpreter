@@ -204,7 +204,17 @@ public class ExamplesProvider {
         );
         examples.add(exFork);
 
-
+        //COUNTDOWN LATCH
+//        new(v1,2);new(v2,3);new(v3,4);newLatch(cnt,rH(v2));
+//        fork(wh(v1,rh(v1)*10));print(rh(v1));countDown(cnt);
+//        fork(wh(v2,rh(v2)*10));print(rh(v2));countDown(cnt);
+//        fork(wh(v3,rh(v3)*10));print(rh(v3));countDown(cnt))));
+//        await(cnt);
+//        print(100);
+//        countDown(cnt);
+//        print(100)
+//        The final Out should be {20,id-first-child,30,id-second-child,40, id-third-child,
+//                100,100}
         IStmt exLatch = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
                 new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
                         new CompStmt(new VarDeclStmt("v3", new RefType(new IntType())),
