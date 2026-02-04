@@ -5,6 +5,7 @@ import Model.ProgrState.PrgState;
 import Model.Stmt.*;
 import Model.Type.*;
 import Model.Value.*;
+import com.sun.jdi.Value;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -266,6 +267,38 @@ public class ExamplesProvider {
         );
         examples.add(exFor);
 
+        //ANOTHER FOR
+//        Ref int a; new(a,20);
+//        (for(v=0;v<3;v=v+1) fork(print(v);v=v*rh(a)));
+//        print(rh(a))
+//        The final Out should be {0,1,2,20}
+        IStmt forBody = new ForkStmt(
+                new CompStmt(
+                        new PrintStmt(new VarExp("v")),
+                        new AssignStmt("v", new ArithExp('*', new VarExp("v"), new ReadHeapExp(new VarExp("a"))))
+                )
+        );
+        IStmt exFor2 = new CompStmt(
+                new VarDeclStmt("a", new RefType(new IntType())),
+                new CompStmt(
+                        new NewStmt("a", new ValueExp(new IntValue(20))),
+                        new CompStmt(
+                                new VarDeclStmt("v", new IntType()),
+                                new CompStmt(
+                                        new ForStmt(
+                                                "v",
+                                                new ValueExp(new IntValue(0)),
+                                                new ValueExp(new IntValue(3)),
+                                                new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))),
+                                                forBody
+                                        ),
+                                        new PrintStmt(new ReadHeapExp(new VarExp("a")))
+                                )
+                        )
+                )
+        );
+        examples.add(exFor2);
+
         // SLEEP
         // v=0; (while(v<3) (fork(print(v);v=v+1);v=v+1); sleep(5); print(v*10)
         IStmt exSleep = new CompStmt(
@@ -415,6 +448,41 @@ public class ExamplesProvider {
                                                                                         new PrintStmt(new VarExp("v"))))))))))));
 
         examples.add(exCond);
+
+        //ANOTHER COND ASSIGNMENT
+       // bool b; int c; b=true; c=b?100:200; print(c); c=(false)?100:200; print(c);
+        // final out : {100, 200}
+        IStmt exCond2 = new CompStmt(
+                new VarDeclStmt("b", new BoolType()),
+                new CompStmt(
+                        new VarDeclStmt("c", new IntType()),
+                        new CompStmt(
+                                new AssignStmt("b", new ValueExp(new BoolValue(true))),
+                                new CompStmt(
+                                        new CondAssignStmt("c",
+                                                new VarExp("b"),
+                                                new ValueExp(new IntValue(100)),
+                                                new ValueExp(new IntValue(200))
+                                        ),
+                                        new CompStmt(
+                                                new PrintStmt(new VarExp("c")),
+                                                new CompStmt(
+                                                        new CondAssignStmt("c",
+                                                                new ValueExp(new BoolValue(false)),
+                                                                new ValueExp(new IntValue(100)),
+                                                                new ValueExp(new IntValue(200))
+                                                        ),
+                                                        new PrintStmt(new VarExp("c"))
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
+
+
+
 
         return examples;
     }

@@ -32,13 +32,13 @@ public class CondAssignStmt implements IStmt {
                 new AssignStmt(var, exp3)
         );
 
-        stack.push(transformation); // [cite: 282]
+        stack.push(transformation);
         return null;
     }
 
     @Override
     public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
-        // Requirement 1a: verify exp1 is bool, and v, exp2, exp3 have same type [cite: 283]
+        // Requirement 1a: verify exp1 is bool, and v, exp2, exp3 have same type
         IType typeVar = typeEnv.lookup(var);
         IType type1 = exp1.typecheck(typeEnv);
         IType type2 = exp2.typecheck(typeEnv);
