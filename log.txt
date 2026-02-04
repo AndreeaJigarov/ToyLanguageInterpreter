@@ -33908,3 +33908,2505 @@ FileTable:
 Heap:
 {1=20, 2=32}
 
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v1;
+Ref(int) v2;
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v1
+Ref(int) v2;
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v1
+Ref(int) v2;
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v2;
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v2;
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v2
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+Ref(int) v2
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int x;
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int x
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int x
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,20);
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,20)
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v1,20)
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (0, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v2,30);
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v2,30)
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+
+>>> ProgramState ID: 0
+ExeStack:
+new(v2,30)
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (0, int)
+Out:
+FileTable:
+Heap:
+{1=20}
+
+>>> ProgramState ID: 0
+ExeStack:
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+newLock(x);
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+newLock(x)
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+newLock(x)
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 0
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x));
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x))
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x))
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x));
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x));
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x))
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x))
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork(fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x))
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+fork(lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x))
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 2
+ExeStack:
+fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+lock(x);
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 2
+ExeStack:
+fork(wH(v2,rH(v2) + 1));
+wH(v2,rH(v2) + 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x);
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+lock(x)
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 2
+ExeStack:
+fork(wH(v2,rH(v2) + 1))
+wH(v2,rH(v2) + 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+lock(x)
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 2
+ExeStack:
+fork(wH(v2,rH(v2) + 1))
+wH(v2,rH(v2) + 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v2,rH(v2) + 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 4
+ExeStack:
+wH(v2,rH(v2) + 1)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v2,rH(v2) + 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 4
+ExeStack:
+wH(v2,rH(v2) + 1)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=30}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 1)
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v2,rH(v2) + 1)
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 4
+ExeStack:
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 1
+ExeStack:
+wH(v1,rH(v1) * 1)
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 2
+ExeStack:
+wH(v2,rH(v2) + 1)
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 0
+ExeStack:
+;
+;
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=31}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 1
+ExeStack:
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 2
+ExeStack:
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 1
+ExeStack:
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 2
+ExeStack:
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+lock(x)
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 1
+ExeStack:
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 2
+ExeStack:
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+wH(v1,rH(v1) - 1);
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+;
+;
+;
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+wH(v1,rH(v1) - 1)
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+wH(v1,rH(v1) - 1)
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 0
+ExeStack:
+
+print(rH(v1));
+print(rH(v2))
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+FileTable:
+Heap:
+{1=20, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+unlock(x)
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+20
+32
+FileTable:
+Heap:
+{1=19, 2=32}
+
+>>> ProgramState ID: 3
+ExeStack:
+SymTable:
+x --> 1
+v1 --> (1, int)
+v2 --> (2, int)
+Out:
+20
+32
+FileTable:
+Heap:
+{1=19, 2=32}
+
