@@ -38,7 +38,7 @@ public class NewBarrierStmt implements IStmt {
             // Create new entry (number, empty list) and add to table
             int newAddr = barrierTable.allocate(new BarrierEntry(number));
 
-            // Update or add variable in SymTable with the new address
+            // Update or add variable in SymTable with the new address, put is made to update if it exists
             state.getSymTable().put(var, new IntValue(newAddr));
 
         } finally {

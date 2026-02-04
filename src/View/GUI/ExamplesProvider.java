@@ -204,6 +204,12 @@ public class ExamplesProvider {
         );
         examples.add(exFork);
 
+
+//        new(v1,2);new(v2,3);new(v3,4);newBarrier(cnt,rH(v2));
+//        fork(await(cnt);wh(v1,rh(v1)*10));print(rh(v1))); fork(await(cnt);wh(v2,rh(v2)*10));wh(v2,rh(v2)*10));print(rh(v2)));
+//        await(cnt);
+//        print(rH(v3))
+//        The final Out should be {4,20,300}.
         IStmt exBarrier =
         new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
                 new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),

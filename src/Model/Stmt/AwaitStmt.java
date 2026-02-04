@@ -9,6 +9,8 @@ import Model.Type.IType;
 import Model.Type.IntType;
 import Model.Value.IValue;
 import Model.Value.IntValue;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -26,7 +28,7 @@ public class AwaitStmt implements IStmt {
 
         lock.lock();
         try {
-            // 1. Check if variable exists and is an integer
+            //Check if variable exists and is an integer
             if (!state.getSymTable().containsKey(var))
                 throw new MyException("Await: Variable " + var + " not found");
 
@@ -36,7 +38,7 @@ public class AwaitStmt implements IStmt {
 
             int foundIndex = ((IntValue) val).getValue();
 
-            // 2. Verify the index exists in the Barrier Table
+            //Verify the index exists in the Barrier Table
             if (!barrierTable.contains(foundIndex))
                 throw new MyException("Await: Barrier index not found in table");
 
@@ -45,13 +47,13 @@ public class AwaitStmt implements IStmt {
             List<Integer> list1 = entry.getThreadIds();
             int NL = list1.size();
 
-            // 3. Blocking Logic
+            //Blocking Logic
             if (N1 > NL) {
                 // If the current thread isn't already waiting, add it
                 if (!list1.contains(state.getId())) {
                     list1.add(state.getId());
                 }
-                // Push back onto the stack to wait for the next execution cycle
+                // Push back onto the stack to wait for the next execution cycle if in list and if not in list
                 state.getExeStack().push(this);
             } else {
                 // Dacă NL == N, nu facem nimic (pop-ul este deja făcut în ProgramState.oneStep),
