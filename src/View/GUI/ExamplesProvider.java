@@ -362,6 +362,11 @@ public class ExamplesProvider {
 
 
         // REPEAT UNTIL
+//        v=0;
+//        (repeat (fork(print(v);v=v-1);v=v+1) until v==3);
+//        x=1;y=2;z=3;w=4;
+//        print(v*10)
+//        The final Out should be {0,1,2,30}
         IStmt exRepeat = new CompStmt(
                 new VarDeclStmt("v", new IntType()),
                 new CompStmt(
