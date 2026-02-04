@@ -6,7 +6,7 @@ import javafx.util.Pair;
 import java.util.*;
 
 public class MyProcTable implements IProcTable {
-    //maping procedure name to a P]pair
+    //maping procedure name to a pair
     private Map<String, Pair<List<String>, IStmt>> table;
 
     public MyProcTable() {

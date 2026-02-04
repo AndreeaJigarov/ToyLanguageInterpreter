@@ -5462,3 +5462,1089 @@ FileTable:
 Heap:
 {}
 
+>>> ProgramState ID: 0
+ExeStack:
+int v;
+int w;
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int v
+int w;
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int v
+int w;
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int w;
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int w;
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int w
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+int w
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=2;
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=2
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=2
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 0
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+w=5;
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+w=5
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+w=5
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 0
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+(call sum [v * 10, w]);
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+(call sum [v * 10, w])
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+(call sum [v * 10, w])
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=a + b;
+print(v)
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=a + b;
+print(v)
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=a + b
+print(v)
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+v=a + b
+print(v)
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 2
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+print(v)
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 25
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+print(v)
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 25
+w --> 5
+Out:
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 25
+w --> 5
+Out:
+25
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+return
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+a --> 20
+b --> 5
+v --> 25
+w --> 5
+Out:
+25
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+print(v);
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+print(v)
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+print(v)
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork((call product [v, w]));
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork((call product [v, w]))
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork((call product [v, w]))
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+(call product [v, w])
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+(call product [v, w])
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+fork((call sum [v, w]))
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+(call product [v, w])
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 0
+ExeStack:
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+v=a * b;
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+(call sum [v, w])
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+v=a * b;
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+(call sum [v, w])
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+v=a * b;
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+(call sum [v, w])
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+v=a * b
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+v=a + b;
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+v=a * b
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+v=a + b;
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+v=a * b
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+v=a + b;
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 10
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+v=a + b
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 10
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+v=a + b
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 10
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+v=a + b
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 2
+w --> 5
+Out:
+25
+2
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 10
+w --> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 7
+w --> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 10
+w --> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 7
+w --> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 10
+w --> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+print(v)
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 7
+w --> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 1
+ExeStack:
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 7
+w --> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+return
+SymTable:
+a --> 2
+b --> 5
+v --> 7
+w --> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+{}
+
+>>> ProgramState ID: 2
+ExeStack:
+SymTable:
+v --> 2
+w --> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+{}
+
