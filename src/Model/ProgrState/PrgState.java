@@ -1,6 +1,8 @@
 package Model.ProgrState;
 
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Barrier.BarrierTable;
+import Model.ProgrState.Helper.Barrier.IBarrierTable;
 import Model.ProgrState.Helper.Dictionary.MyDictionary;
 import Model.ProgrState.Helper.Dictionary.MyIDictionary;
 import Model.ProgrState.Helper.FileTable.FileTable;
@@ -34,29 +36,23 @@ public class PrgState {
     private FileTable<StringValue, BufferedReader> fileTable;
     private IStmt originalProgram; //good to have cica
 
-    // wrong for forked threads, it must share the same filetable and heap
-//    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot, IStmt orPrg) {
-//        exeStack = stk;
-//        symTable = symtbl;
-//        out = ot;
-//        this.fileTable = new MyFileTable<>();
-//        this.heap = new MyHeap();
-//        originalProgram = orPrg;// DEEPCOPY recreate entire original program
-//        exeStack.push(orPrg);
-//        this.id = getNewId(); // Task 8: Assign unique ID
-//    }
+    private IBarrierTable barrierTable;
+
+
+
 
     private static synchronized int getNewId() { // Task 8: Synchronized for thread safety
         return lastId++;
     }
 //for fork constructor
     public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, IValue> symtbl, MyIList<IValue> ot,
-                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap) {
+                    FileTable<StringValue, BufferedReader> fileTable, IHeap<Integer, IValue> heap, IBarrierTable barrierTbl) {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.barrierTable = barrierTbl;
         this.id = getNewId(); // Task 8: Assign unique ID
     }
 
@@ -68,6 +64,7 @@ public class PrgState {
         this.heap = new MyHeap();
         out= new MyList<IValue>();
         fileTable = new MyFileTable<>();
+        barrierTable = new BarrierTable();
         try {
             ex.typecheck(new MyDictionary<String, IType>());  // verifica tipurile cu un env gol
         } catch (MyException e) {
@@ -115,6 +112,17 @@ public class PrgState {
     public void setHeap(IHeap<Integer, IValue> heap) {
         this.heap = heap;
     }
+
+
+    //BARRIER!!
+    public IBarrierTable getBarrierTable() {
+        return barrierTable;
+    }
+    public void setBarrierTable(IBarrierTable barrierTable) {
+        this.barrierTable = barrierTable;
+    }
+
+
 
     public int getId() {
         return id;
