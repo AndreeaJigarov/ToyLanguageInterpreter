@@ -2,6 +2,7 @@ package View.GUI;
 
 import Controller.Controller;
 import Exceptions.MyException;
+import Model.ProgrState.Helper.Barrier.BarrierEntry;
 import Model.ProgrState.PrgState;
 import Model.Stmt.IStmt;
 import Model.Value.IValue;
@@ -31,6 +32,8 @@ public class InterpreterWindow {
     private final TableView<Map.Entry<Integer, IValue>> heapTable = new TableView<>();
     private final TableView<Map.Entry<String, IValue>> symTable = new TableView<>();
 
+    private final TableView<Map.Entry<Integer , BarrierEntry>> barrierTable = new TableView<>();
+
     private final TextField nrPrgStates = new TextField();
     private final Button oneStepBtn = new Button("Run one step");
 
@@ -41,6 +44,7 @@ public class InterpreterWindow {
         //setup the table
         setupHeapTable();
         setupSymTable();
+        setupBarrierTable();
 
         //titled panes
         TitledPane prgPane = new TitledPane("PrgState IDs", prgIds);
@@ -49,9 +53,12 @@ public class InterpreterWindow {
         TitledPane symPane = new TitledPane("SymTable", symTable);
         TitledPane outPane = new TitledPane("Out", out);
         TitledPane filePane = new TitledPane("FileTable", fileTable);
+        TitledPane barrierPane = new TitledPane("BarrierTable", barrierTable);
+
+
 
         VBox left = new VBox(10, prgPane, stackPane);
-        VBox mid  = new VBox(10, heapPane, symPane);
+        VBox mid  = new VBox(10, heapPane, symPane , barrierPane);
         VBox right = new VBox(10, outPane, filePane);
 
         VBox.setVgrow(prgIds, Priority.ALWAYS);
@@ -60,6 +67,7 @@ public class InterpreterWindow {
         VBox.setVgrow(symTable, Priority.ALWAYS);
         VBox.setVgrow(out, Priority.ALWAYS);
         VBox.setVgrow(fileTable, Priority.ALWAYS);
+        VBox.setVgrow(barrierTable, Priority.ALWAYS);
 
 
         // BOTTOM CONTROLS
@@ -142,6 +150,18 @@ public class InterpreterWindow {
 
     }
 
+    private void setupBarrierTable() {
+        TableColumn<Map.Entry<Integer, BarrierEntry>, Integer> indexCol = new TableColumn<>("Index");
+        indexCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getKey()));
+        TableColumn<Map.Entry<Integer, BarrierEntry>, Integer> thresholdCol = new TableColumn<>("Threshold");
+        thresholdCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue().getThreshold()));
+        TableColumn<Map.Entry<Integer, BarrierEntry>, List<Integer>> listCol = new TableColumn<>("Waiting Threads");
+        listCol.setCellValueFactory(p -> new javafx.beans.property.SimpleObjectProperty<>(p.getValue().getValue().getThreadIds()));
+
+        barrierTable.getColumns().addAll(indexCol, thresholdCol, listCol);
+    }
+
+
     private void updateAll() {
 
             List<PrgState> prgs = ctrl.getRepository().getPrgList();
@@ -158,6 +178,7 @@ public class InterpreterWindow {
                 fileTable.getItems().clear();
                 exeStack.getItems().clear();
                 symTable.getItems().clear();
+                barrierTable.getItems().clear();
                 oneStepBtn.setDisable(true);
                 return;
             }
@@ -182,6 +203,10 @@ public class InterpreterWindow {
             fileTable.setItems(FXCollections.observableArrayList(
                     prgs.get(0).getFileTable().getKeys().stream().map(StringValue::getValue).toList()
             ));
+            barrierTable.setItems(FXCollections.observableArrayList(
+                    prgs.get(0).getBarrierTable().getContent().entrySet().stream().toList()
+            ));
+            barrierTable.refresh();
 
             if (prgIds.getSelectionModel().getSelectedItem() == null) {
                 prgIds.getSelectionModel().selectFirst();

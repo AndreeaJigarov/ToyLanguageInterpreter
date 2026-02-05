@@ -206,14 +206,16 @@ public class ExamplesProvider {
         examples.add(exFork);
 
 
-
         //Example repeatAs
-        int v; int x; v=3;x=2;
+        int v;
+        int x;
+        v = 3;
+        x = 2;
 //        (repeat (fork(print(v);x=x-1;print(x));v=v+1) as v==0);
 //        nop;nop;nop;nop;nop;nop;nop;
 //        print(x)
 //        The final Out should be {3,1,2}
-        IStmt exRepeatAs = new  CompStmt(
+        IStmt exRepeatAs = new CompStmt(
                 new VarDeclStmt("v", new IntType()),
                 new CompStmt(
                         new VarDeclStmt("x", new IntType()),
@@ -221,23 +223,23 @@ public class ExamplesProvider {
                                 new AssignStmt("v", new ValueExp(new IntValue(3))),
                                 new CompStmt(
                                         new AssignStmt("x", new ValueExp(new IntValue(2))),
-                                        new  CompStmt(
+                                        new CompStmt(
 
 
-                                            new RepeatAsStmt(
-                                                    new CompStmt(
-                                                    new ForkStmt(
-                                                            new CompStmt(
-                                                                    new PrintStmt(new VarExp("v")),
-                                                                    new CompStmt( new AssignStmt("x", new ArithExp('-', new VarExp("x"), new ValueExp(new IntValue(1)))),
-                                                                            new PrintStmt(new VarExp("x")))
-                                                            )
-                                                    ),
-                                                    new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                                new RepeatAsStmt(
+                                                        new CompStmt(
+                                                                new ForkStmt(
+                                                                        new CompStmt(
+                                                                                new PrintStmt(new VarExp("v")),
+                                                                                new CompStmt(new AssignStmt("x", new ArithExp('-', new VarExp("x"), new ValueExp(new IntValue(1)))),
+                                                                                        new PrintStmt(new VarExp("x")))
+                                                                        )
+                                                                ),
+                                                                new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
 
-                                                    ),
-                                                    new RelationalExp( new VarExp("v"), new ValueExp(new IntValue(0)), "==")
-                                            ),
+                                                        ),
+                                                        new RelationalExp(new VarExp("v"), new ValueExp(new IntValue(0)), "==")
+                                                ),
                                                 new CompStmt(new NopStmt(),
                                                         new CompStmt(new NopStmt(),
                                                                 new CompStmt(new NopStmt(),
@@ -263,9 +265,24 @@ public class ExamplesProvider {
         examples.add(exRepeatAs);
 
 
-        //barrier
-        IStmt exBarrier = new CompStmt(
-                new VarDeclStmt("v1", new RefType(new IntType())),
+        IStmt fork1 = new ForkStmt(new CompStmt(new AwaitStmt("id"),
+                new CompStmt(new WriteHeapStmt("v1", new ArithExp('*',new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),
+                       new CompStmt(new NopStmt() , new CompStmt(new NopStmt(),
+                        new PrintStmt(new ReadHeapExp(new VarExp("v1"))))))));
+
+        IStmt fork2 = new ForkStmt(new CompStmt(new AwaitStmt("id"),
+                new CompStmt(new WriteHeapStmt("v2", new ArithExp('*',new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                        new CompStmt(new WriteHeapStmt("v2", new ArithExp('*',new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                               new CompStmt(new NopStmt() , new CompStmt( new NopStmt(), new CompStmt( new NopStmt() ,
+
+                                new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                                        new PrintStmt(new ReadHeapExp(new VarExp("v2"))))))))) ));
+
+        IStmt fork3 = new ForkStmt(new CompStmt(new AwaitStmt("id"),
+                new PrintStmt(new ArithExp('*',new ReadHeapExp(new VarExp("v3")),
+                        new ValueExp(new IntValue(40))))));
+
+        IStmt exBarrier = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
                 new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
                         new CompStmt(new VarDeclStmt("v3", new RefType(new IntType())),
                                 new CompStmt(new VarDeclStmt("id", new IntType()),
@@ -274,34 +291,16 @@ public class ExamplesProvider {
                                                         new CompStmt(new NewStmt("v2", new ValueExp(new IntValue(3))),
                                                                 new CompStmt(new NewStmt("v3", new ValueExp(new IntValue(4))),
                                                                         new CompStmt(new NewBarrierStmt("id", new ReadHeapExp(new VarExp("v2"))),
-                                                                                new CompStmt(
-                                                                                        new ForkStmt(new CompStmt(new AwaitStmt("id"),
-                                                                                                new CompStmt(new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),
-                                                                                                        new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new PrintStmt(new ReadHeapExp(new VarExp("v1")))))))),
-                                                                                        new CompStmt(
-                                                                                                new ForkStmt(new CompStmt(new AwaitStmt("id"),
-                                                                                                        new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
-                                                                                                                new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(),
-                                                                                                                        new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
-                                                                                                                                new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
-                                                                                                                                        new PrintStmt(new ReadHeapExp(new VarExp("v2"))))))))))),
-                                                                                                new CompStmt(
-                                                                                                        new ForkStmt(new CompStmt(new AwaitStmt("id"),
-                                                                                                                new PrintStmt(new ArithExp('*', new ReadHeapExp(new VarExp("v3")), new ValueExp(new IntValue(40)))))),
+                                                                                new CompStmt(fork1,
+                                                                                        new CompStmt(fork2,
+                                                                                                new CompStmt(fork3,
                                                                                                         new PrintStmt(new ReadHeapExp(new VarExp("v3")))
-                                                                                                )
-                                                                                        )
-                                                                                )
-                                                                        )
-                                                                )
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+                                                                                                ))))))))))));
+
+
+
         examples.add(exBarrier);
+
 
 
         return examples;

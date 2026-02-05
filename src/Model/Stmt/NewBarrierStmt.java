@@ -36,8 +36,8 @@ public class NewBarrierStmt implements IStmt {
 
             int newAddr= barrierTable.allocate(new BarrierEntry(number));
 
-            if (!state.getSymTable().containsKey(var) || !state.getSymTable().get(var).equals(new IntType()))
-                throw new  MyException("NewBarrier: Variable already exists");
+//            if (!state.getSymTable().containsKey(var) || !state.getSymTable().get(var).equals(new IntType()))
+//                throw new  MyException("NewBarrier: Variable already exists");
             state.getSymTable().put(var, new IntValue(newAddr));
 
         } finally {
