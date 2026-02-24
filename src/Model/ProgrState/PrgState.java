@@ -114,7 +114,7 @@ public class PrgState {
     }
 
 
-    //BARRIER!!
+
     public IBarrierTable getBarrierTable() {
         return barrierTable;
     }
